@@ -1,0 +1,12 @@
+{
+  "version": "baseline-v1",
+  "dataset": "golden_dataset.json",
+  "checks": [
+    {"name": "held-out classification accuracy", "split": "test", "path": ["classification", "accuracy"], "minimum": 0.75},
+    {"name": "held-out macro F1", "split": "test", "path": ["classification", "macro_f1"], "minimum": 0.75},
+    {"name": "held-out Evidence Recall@5", "split": "test", "path": ["retrieval", "recall_at_5"], "minimum": 0.70},
+    {"name": "held-out citation precision", "split": "test", "path": ["citations", "citation_precision"], "minimum": 0.95},
+    {"name": "held-out false-supported rate", "split": "test", "path": ["classification", "false_supported_rate"], "maximum": 0.0},
+    {"name": "held-out unsupported-claim rate", "split": "test", "path": ["safety", "unsupported_claim_rate"], "maximum": 0.0}
+  ]
+}

@@ -1,23 +1,386 @@
 [
   {
-    "id": "python-supported",
-    "resume": "Software Engineer. Built Python and FastAPI REST API services used by three internal teams.",
-    "job_description": "Required: experience building production Python REST API services.",
+    "id": "dev-python-api-supported",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Built Python and FastAPI REST API services used by three internal teams."},
+      {"id": "resume-s2", "text": "Created weekly product reports for engineering leadership."}
+    ],
+    "requirement": "Required: experience building production Python REST API services.",
     "expected_status": "supported",
-    "expected_term": "python"
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["AWS experience", "Kubernetes experience"]
   },
   {
-    "id": "aws-missing",
-    "resume": "Software Engineer. Built Python services and PostgreSQL reporting pipelines.",
-    "job_description": "Required: hands-on AWS experience deploying cloud applications.",
+    "id": "dev-postgres-sql-supported",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Created PostgreSQL reporting pipelines and wrote SQL queries for finance teams."},
+      {"id": "resume-s2", "text": "Maintained internal documentation and onboarding guides."}
+    ],
+    "requirement": "Must have PostgreSQL and SQL experience.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["database administration certification"]
+  },
+  {
+    "id": "dev-aws-kubernetes-missing",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Built Python reporting services for internal business users."},
+      {"id": "resume-s2", "text": "Worked with PostgreSQL datasets and automated monthly reports."}
+    ],
+    "requirement": "AWS and Kubernetes experience are required.",
     "expected_status": "missing",
-    "expected_term": "aws"
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["AWS experience", "Kubernetes experience"]
   },
   {
-    "id": "postgres-supported",
-    "resume": "Data analyst. Created PostgreSQL dashboards and wrote SQL reporting queries.",
-    "job_description": "Must have PostgreSQL and SQL experience.",
+    "id": "dev-stakeholder-communication-partial",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Worked with product stakeholders in an Agile delivery team."},
+      {"id": "resume-s2", "text": "Built Python scripts that automated data reconciliation."}
+    ],
+    "requirement": "Strong stakeholder communication skills are required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["executive presentation experience"]
+  },
+  {
+    "id": "dev-react-typescript-supported",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Developed React applications in TypeScript for an online booking platform."},
+      {"id": "resume-s2", "text": "Collaborated with designers to improve accessibility."}
+    ],
+    "requirement": "Professional React and TypeScript development experience is required.",
     "expected_status": "supported",
-    "expected_term": "postgresql"
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["Next.js experience"]
+  },
+  {
+    "id": "dev-docker-kubernetes-partial",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Packaged backend services with Docker for consistent local development."},
+      {"id": "resume-s2", "text": "Configured GitHub Actions to run unit tests."}
+    ],
+    "requirement": "Hands-on Docker and Kubernetes experience is required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["Kubernetes experience"]
+  },
+  {
+    "id": "dev-machine-learning-missing",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Created SQL dashboards for operational reporting."},
+      {"id": "resume-s2", "text": "Automated spreadsheet reconciliation with Python."}
+    ],
+    "requirement": "Knowledge of machine learning model development is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["machine learning experience"]
+  },
+  {
+    "id": "dev-ci-cd-github-actions-supported",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Implemented CI/CD workflows with GitHub Actions for test and deployment automation."},
+      {"id": "resume-s2", "text": "Reviewed pull requests and maintained release documentation."}
+    ],
+    "requirement": "Experience with CI/CD and GitHub Actions is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["GitLab CI experience"]
+  },
+  {
+    "id": "dev-leadership-partial",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Provided technical guidance to two graduate developers."},
+      {"id": "resume-s2", "text": "Delivered backend features in an Agile team."}
+    ],
+    "requirement": "Demonstrated engineering leadership and team management experience.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["people management experience"]
+  },
+  {
+    "id": "dev-gcp-missing",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Maintained on-premise PostgreSQL reporting systems."},
+      {"id": "resume-s2", "text": "Created Python scripts for scheduled data processing."}
+    ],
+    "requirement": "Familiarity with GCP cloud services is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["GCP experience"]
+  },
+  {
+    "id": "dev-nextjs-react-partial",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Developed responsive React user interfaces for a customer portal."},
+      {"id": "resume-s2", "text": "Wrote frontend tests with JavaScript."}
+    ],
+    "requirement": "Experience with React and Next.js is required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["Next.js experience"]
+  },
+  {
+    "id": "dev-azure-missing",
+    "split": "dev",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Deployed internal applications to physical Linux servers."},
+      {"id": "resume-s2", "text": "Maintained SQL reporting databases."}
+    ],
+    "requirement": "Microsoft Azure experience is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["Azure experience"]
+  },
+  {
+    "id": "validation-restful-synonym-supported",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Designed Python web services following RESTful interface principles."},
+      {"id": "resume-s2", "text": "Improved API response times by thirty percent."}
+    ],
+    "requirement": "Required: Python REST API development experience.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["FastAPI experience"]
+  },
+  {
+    "id": "validation-amazon-web-services-synonym-supported",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Deployed containerised services to Amazon Web Services using managed compute."},
+      {"id": "resume-s2", "text": "Created deployment documentation for the engineering team."}
+    ],
+    "requirement": "Hands-on AWS deployment experience is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["AWS certification"]
+  },
+  {
+    "id": "validation-python-missing",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Developed Java services for an internal payments platform."},
+      {"id": "resume-s2", "text": "Maintained build scripts and release documentation."}
+    ],
+    "requirement": "Professional Python development experience is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["Python experience"]
+  },
+  {
+    "id": "validation-teamwork-supported",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Demonstrated teamwork by pairing with engineers and designers across two product squads."},
+      {"id": "resume-s2", "text": "Documented frontend component standards."}
+    ],
+    "requirement": "Strong teamwork skills are required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["team leadership experience"]
+  },
+  {
+    "id": "validation-communication-partial",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Wrote technical documentation for internal software services."},
+      {"id": "resume-s2", "text": "Built PostgreSQL queries for weekly reporting."}
+    ],
+    "requirement": "Excellent verbal and written communication skills are required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["public speaking experience"]
+  },
+  {
+    "id": "validation-rag-supported",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Built a RAG assistant that answered questions from product documentation."},
+      {"id": "resume-s2", "text": "Added automated tests for citation output."}
+    ],
+    "requirement": "Practical RAG application development experience is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["production RAG experience"]
+  },
+  {
+    "id": "validation-node-typescript-partial",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Developed Node.js services for an internal integration platform."},
+      {"id": "resume-s2", "text": "Wrote JavaScript tests for API handlers."}
+    ],
+    "requirement": "Node.js and TypeScript experience is required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["TypeScript experience"]
+  },
+  {
+    "id": "validation-git-supported",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Used Git for feature branching, code review, and collaborative software delivery."},
+      {"id": "resume-s2", "text": "Maintained engineering onboarding documentation."}
+    ],
+    "requirement": "Proficiency with Git is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["GitHub administration experience"]
+  },
+  {
+    "id": "validation-react-missing",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Built server-rendered templates with Python and standard HTML."},
+      {"id": "resume-s2", "text": "Maintained SQL queries for operational dashboards."}
+    ],
+    "requirement": "Professional React development experience is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["React experience"]
+  },
+  {
+    "id": "validation-agile-missing",
+    "split": "validation",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Worked independently on academic programming assignments."},
+      {"id": "resume-s2", "text": "Documented project outcomes in written reports."}
+    ],
+    "requirement": "Experience working in Agile software teams is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["Agile experience"]
+  },
+  {
+    "id": "test-fastapi-supported",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Created FastAPI endpoints for a document processing service."},
+      {"id": "resume-s2", "text": "Added request validation and automated API tests."}
+    ],
+    "requirement": "FastAPI development experience is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["production scale experience"]
+  },
+  {
+    "id": "test-structured-stakeholder-synonym-partial",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Gathered requirements from business partners for a reporting project."},
+      {"id": "resume-s2", "text": "Built SQL dashboards for operational teams."}
+    ],
+    "requirement": "Strong stakeholder communication and requirements gathering skills are required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["executive stakeholder management"]
+  },
+  {
+    "id": "test-kubernetes-supported",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Operated Kubernetes deployments and diagnosed failed application pods."},
+      {"id": "resume-s2", "text": "Documented deployment recovery procedures."}
+    ],
+    "requirement": "Hands-on Kubernetes operations experience is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["Kubernetes certification"]
+  },
+  {
+    "id": "test-sql-partial",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Wrote SQL queries for monthly finance reports."},
+      {"id": "resume-s2", "text": "Created spreadsheet models for budget planning."}
+    ],
+    "requirement": "Advanced SQL and PostgreSQL performance tuning experience is required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["PostgreSQL performance tuning"]
+  },
+  {
+    "id": "test-docker-missing",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Ran Python applications directly on a local workstation."},
+      {"id": "resume-s2", "text": "Documented manual installation procedures."}
+    ],
+    "requirement": "Docker containerisation experience is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["Docker experience"]
+  },
+  {
+    "id": "test-javascript-typescript-partial",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Developed browser features using modern JavaScript."},
+      {"id": "resume-s2", "text": "Worked with designers to improve responsive layouts."}
+    ],
+    "requirement": "JavaScript and TypeScript experience is required.",
+    "expected_status": "partial",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["TypeScript experience"]
+  },
+  {
+    "id": "test-python-missing",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Configured no-code workflows for customer support teams."},
+      {"id": "resume-s2", "text": "Produced weekly service performance reports."}
+    ],
+    "requirement": "Python software development experience is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["Python experience"]
+  },
+  {
+    "id": "test-azure-supported",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Deployed web applications to Azure and configured managed application services."},
+      {"id": "resume-s2", "text": "Monitored deployment health after releases."}
+    ],
+    "requirement": "Microsoft Azure application deployment experience is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["Azure architecture certification"]
+  },
+  {
+    "id": "test-rag-missing",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Built a rules-based document search interface."},
+      {"id": "resume-s2", "text": "Added keyword filters for product documentation."}
+    ],
+    "requirement": "Production RAG system experience is required.",
+    "expected_status": "missing",
+    "expected_evidence_ids": [],
+    "forbidden_claims": ["RAG experience"]
+  },
+  {
+    "id": "test-leadership-semantic-supported",
+    "split": "test",
+    "resume_evidence": [
+      {"id": "resume-s1", "text": "Led four engineers through the design and delivery of a billing migration."},
+      {"id": "resume-s2", "text": "Presented weekly delivery updates to product management."}
+    ],
+    "requirement": "Demonstrated engineering leadership experience is required.",
+    "expected_status": "supported",
+    "expected_evidence_ids": ["resume-s1"],
+    "forbidden_claims": ["formal people management"]
   }
 ]

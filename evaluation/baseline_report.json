@@ -1,0 +1,1210 @@
+{
+  "dataset": "golden_dataset.json",
+  "dataset_cases": 32,
+  "splits": {
+    "all": {
+      "cases": 32,
+      "classification": {
+        "accuracy": 0.8125,
+        "macro_f1": 0.8065217391304348,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 0.7692307692307693,
+            "f1": 0.8695652173913044,
+            "support": 13
+          },
+          "partial": {
+            "precision": 0.8571428571428571,
+            "recall": 0.6666666666666666,
+            "f1": 0.75,
+            "support": 9
+          },
+          "missing": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 10
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 10,
+            "partial": 1,
+            "missing": 2
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 6,
+            "missing": 3
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 10
+          }
+        }
+      },
+      "retrieval": {
+        "answerable_cases": 22,
+        "recall_at_1": 0.7727272727272727,
+        "precision_at_1": 0.7727272727272727,
+        "hit_rate_at_1": 0.7727272727272727,
+        "recall_at_3": 0.7727272727272727,
+        "precision_at_3": 0.7727272727272727,
+        "hit_rate_at_3": 0.7727272727272727,
+        "recall_at_5": 0.7727272727272727,
+        "precision_at_5": 0.7727272727272727,
+        "hit_rate_at_5": 0.7727272727272727,
+        "mrr": 0.7727272727272727
+      },
+      "citations": {
+        "citation_precision": 1.0,
+        "citation_coverage": 0.7727272727272727,
+        "total_citations": 17
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.0,
+        "violations": []
+      },
+      "case_results": [
+        {
+          "case_id": "dev-python-api-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "AWS experience",
+            "Kubernetes experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-postgres-sql-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "database administration certification"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-aws-kubernetes-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "AWS experience",
+            "Kubernetes experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-stakeholder-communication-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "executive presentation experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "dev-react-typescript-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Next.js experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-docker-kubernetes-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Kubernetes experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "dev-machine-learning-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "machine learning experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-ci-cd-github-actions-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "GitLab CI experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-leadership-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "people management experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-gcp-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "GCP experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-nextjs-react-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Next.js experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "dev-azure-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Azure experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-restful-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "FastAPI experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "validation-amazon-web-services-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "AWS certification"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-python-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Python experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-teamwork-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "team leadership experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "validation-communication-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "public speaking experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-rag-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "production RAG experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "validation-node-typescript-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "TypeScript experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "validation-git-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "GitHub administration experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "validation-react-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "React experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-agile-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Agile experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-fastapi-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "production scale experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "test-structured-stakeholder-synonym-partial",
+          "split": "test",
+          "expected_status": "partial",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "executive stakeholder management"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-kubernetes-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Kubernetes certification"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "test-sql-partial",
+          "split": "test",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "PostgreSQL performance tuning"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "test-docker-missing",
+          "split": "test",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Docker experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-javascript-typescript-partial",
+          "split": "test",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "TypeScript experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "test-python-missing",
+          "split": "test",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Python experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-azure-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Azure architecture certification"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "test-rag-missing",
+          "split": "test",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "RAG experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-leadership-semantic-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "formal people management"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        }
+      ]
+    },
+    "dev": {
+      "cases": 12,
+      "classification": {
+        "accuracy": 0.9166666666666666,
+        "macro_f1": 0.9153439153439153,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 4
+          },
+          "partial": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571,
+            "support": 4
+          },
+          "missing": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.888888888888889,
+            "support": 4
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 4,
+            "partial": 0,
+            "missing": 0
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 3,
+            "missing": 1
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 4
+          }
+        }
+      },
+      "retrieval": {
+        "answerable_cases": 8,
+        "recall_at_1": 0.875,
+        "precision_at_1": 0.875,
+        "hit_rate_at_1": 0.875,
+        "recall_at_3": 0.875,
+        "precision_at_3": 0.875,
+        "hit_rate_at_3": 0.875,
+        "recall_at_5": 0.875,
+        "precision_at_5": 0.875,
+        "hit_rate_at_5": 0.875,
+        "mrr": 0.875
+      },
+      "citations": {
+        "citation_precision": 1.0,
+        "citation_coverage": 0.875,
+        "total_citations": 7
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.0,
+        "violations": []
+      },
+      "case_results": [
+        {
+          "case_id": "dev-python-api-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "AWS experience",
+            "Kubernetes experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-postgres-sql-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "database administration certification"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-aws-kubernetes-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "AWS experience",
+            "Kubernetes experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-stakeholder-communication-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "executive presentation experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "dev-react-typescript-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Next.js experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-docker-kubernetes-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Kubernetes experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "dev-machine-learning-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "machine learning experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-ci-cd-github-actions-supported",
+          "split": "dev",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "GitLab CI experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "dev-leadership-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "people management experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-gcp-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "GCP experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "dev-nextjs-react-partial",
+          "split": "dev",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Next.js experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "dev-azure-missing",
+          "split": "dev",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Azure experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        }
+      ]
+    },
+    "validation": {
+      "cases": 10,
+      "classification": {
+        "accuracy": 0.7,
+        "macro_f1": 0.6666666666666666,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 0.6,
+            "f1": 0.7499999999999999,
+            "support": 5
+          },
+          "partial": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1": 0.5,
+            "support": 2
+          },
+          "missing": {
+            "precision": 0.6,
+            "recall": 1.0,
+            "f1": 0.7499999999999999,
+            "support": 3
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 3,
+            "partial": 1,
+            "missing": 1
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 1,
+            "missing": 1
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 3
+          }
+        }
+      },
+      "retrieval": {
+        "answerable_cases": 7,
+        "recall_at_1": 0.7142857142857143,
+        "precision_at_1": 0.7142857142857143,
+        "hit_rate_at_1": 0.7142857142857143,
+        "recall_at_3": 0.7142857142857143,
+        "precision_at_3": 0.7142857142857143,
+        "hit_rate_at_3": 0.7142857142857143,
+        "recall_at_5": 0.7142857142857143,
+        "precision_at_5": 0.7142857142857143,
+        "hit_rate_at_5": 0.7142857142857143,
+        "mrr": 0.7142857142857143
+      },
+      "citations": {
+        "citation_precision": 1.0,
+        "citation_coverage": 0.7142857142857143,
+        "total_citations": 5
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.0,
+        "violations": []
+      },
+      "case_results": [
+        {
+          "case_id": "validation-restful-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "FastAPI experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "validation-amazon-web-services-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "AWS certification"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-python-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Python experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-teamwork-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "team leadership experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "validation-communication-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "public speaking experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-rag-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "production RAG experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "validation-node-typescript-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "TypeScript experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "validation-git-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "GitHub administration experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "validation-react-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "React experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "validation-agile-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Agile experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        }
+      ]
+    },
+    "test": {
+      "cases": 10,
+      "classification": {
+        "accuracy": 0.8,
+        "macro_f1": 0.8023809523809523,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571,
+            "support": 4
+          },
+          "partial": {
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "f1": 0.8,
+            "support": 3
+          },
+          "missing": {
+            "precision": 0.6,
+            "recall": 1.0,
+            "f1": 0.7499999999999999,
+            "support": 3
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 3,
+            "partial": 0,
+            "missing": 1
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 2,
+            "missing": 1
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 3
+          }
+        }
+      },
+      "retrieval": {
+        "answerable_cases": 7,
+        "recall_at_1": 0.7142857142857143,
+        "precision_at_1": 0.7142857142857143,
+        "hit_rate_at_1": 0.7142857142857143,
+        "recall_at_3": 0.7142857142857143,
+        "precision_at_3": 0.7142857142857143,
+        "hit_rate_at_3": 0.7142857142857143,
+        "recall_at_5": 0.7142857142857143,
+        "precision_at_5": 0.7142857142857143,
+        "hit_rate_at_5": 0.7142857142857143,
+        "mrr": 0.7142857142857143
+      },
+      "citations": {
+        "citation_precision": 1.0,
+        "citation_coverage": 0.7142857142857143,
+        "total_citations": 5
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.0,
+        "violations": []
+      },
+      "case_results": [
+        {
+          "case_id": "test-fastapi-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "production scale experience"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "test-structured-stakeholder-synonym-partial",
+          "split": "test",
+          "expected_status": "partial",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "executive stakeholder management"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-kubernetes-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Kubernetes certification"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "test-sql-partial",
+          "split": "test",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "PostgreSQL performance tuning"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "test-docker-missing",
+          "split": "test",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Docker experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-javascript-typescript-partial",
+          "split": "test",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "TypeScript experience"
+          ],
+          "generated_text": "Related evidence was found, but it does not cover the full requirement. Clarify the connection without claiming experience you do not have."
+        },
+        {
+          "case_id": "test-python-missing",
+          "split": "test",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Python experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-azure-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "Azure architecture certification"
+          ],
+          "generated_text": "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
+        },
+        {
+          "case_id": "test-rag-missing",
+          "split": "test",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "RAG experience"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        },
+        {
+          "case_id": "test-leadership-semantic-supported",
+          "split": "test",
+          "expected_status": "supported",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "formal people management"
+          ],
+          "generated_text": "No supporting evidence was found. Add this only if you can describe a genuine example, your actions, and a measurable outcome."
+        }
+      ]
+    }
+  }
+}

@@ -35,6 +35,7 @@ def test_analysis_finds_supported_python_evidence():
     assert python_matches
     assert python_matches[0].status == "supported"
     assert "python" in python_matches[0].matched_terms
+    assert python_matches[0].evidence[0].evidence_id == "resume-s2"
     assert "Python and FastAPI" in python_matches[0].evidence[0].text
 
 

@@ -77,18 +77,20 @@ def extract_requirements(job_description: str, limit: int = 12) -> list[str]:
     return _unique(candidates)[:limit]
 
 
-def _evidence_for(requirement: str, resume_sentences: list[str]) -> tuple[list[str], list[str]]:
+def _evidence_for(
+    requirement: str, resume_sentences: list[str]
+) -> tuple[list[Evidence], list[str]]:
     required_terms = _terms(requirement)
-    matches: list[tuple[int, str, list[str]]] = []
-    for sentence in resume_sentences:
+    matches: list[tuple[int, int, str, list[str]]] = []
+    for sentence_index, sentence in enumerate(resume_sentences, start=1):
         sentence_terms = _terms(sentence)
         overlapping = [term for term in required_terms if term in sentence_terms]
         if overlapping:
-            matches.append((len(overlapping), sentence, overlapping))
-    matches.sort(key=lambda item: (-item[0], len(item[1])))
-    evidence_sentences = [item[1] for item in matches[:3]]
-    matched_terms = _unique(term for item in matches for term in item[2])
-    return evidence_sentences, matched_terms
+            matches.append((len(overlapping), sentence_index, sentence, overlapping))
+    matches.sort(key=lambda item: (-item[0], len(item[2]), item[1]))
+    evidence = [Evidence(evidence_id=f"resume-s{item[1]}", text=item[2]) for item in matches[:5]]
+    matched_terms = _unique(term for item in matches for term in item[3])
+    return evidence, matched_terms
 
 
 def analyze(resume_text: str, job_description: str) -> AnalysisResponse:
@@ -96,29 +98,24 @@ def analyze(resume_text: str, job_description: str) -> AnalysisResponse:
     resume_sentences = _sentences(resume_text)
     results: list[RequirementMatch] = []
 
-    for requirement_index, requirement in enumerate(requirements, start=1):
+    for requirement in requirements:
         required_terms = _terms(requirement)
-        evidence_sentences, matched_terms = _evidence_for(requirement, resume_sentences)
+        evidence, matched_terms = _evidence_for(requirement, resume_sentences)
         coverage = len(matched_terms) / max(len(required_terms), 1)
 
-        if not evidence_sentences:
+        if not evidence:
             status = "missing"
             confidence = 0.82
             recommendation = (
                 "No supporting evidence was found. Add this only if you can describe a genuine "
                 "example, your actions, and a measurable outcome."
             )
-            evidence = []
         elif coverage >= 0.75:
             status = "supported"
             confidence = min(0.95, 0.70 + coverage * 0.25)
             recommendation = (
                 "Evidence was found. Strengthen it with scope, ownership, and a measurable result."
             )
-            evidence = [
-                Evidence(evidence_id=f"resume-{requirement_index}-{index}", text=sentence)
-                for index, sentence in enumerate(evidence_sentences, start=1)
-            ]
         else:
             status = "partial"
             confidence = 0.68
@@ -126,10 +123,6 @@ def analyze(resume_text: str, job_description: str) -> AnalysisResponse:
                 "Related evidence was found, but it does not cover the full requirement. Clarify "
                 "the connection without claiming experience you do not have."
             )
-            evidence = [
-                Evidence(evidence_id=f"resume-{requirement_index}-{index}", text=sentence)
-                for index, sentence in enumerate(evidence_sentences, start=1)
-            ]
 
         results.append(
             RequirementMatch(
