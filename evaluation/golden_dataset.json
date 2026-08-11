@@ -1,0 +1,23 @@
+[
+  {
+    "id": "python-supported",
+    "resume": "Software Engineer. Built Python and FastAPI REST API services used by three internal teams.",
+    "job_description": "Required: experience building production Python REST API services.",
+    "expected_status": "supported",
+    "expected_term": "python"
+  },
+  {
+    "id": "aws-missing",
+    "resume": "Software Engineer. Built Python services and PostgreSQL reporting pipelines.",
+    "job_description": "Required: hands-on AWS experience deploying cloud applications.",
+    "expected_status": "missing",
+    "expected_term": "aws"
+  },
+  {
+    "id": "postgres-supported",
+    "resume": "Data analyst. Created PostgreSQL dashboards and wrote SQL reporting queries.",
+    "job_description": "Must have PostgreSQL and SQL experience.",
+    "expected_status": "supported",
+    "expected_term": "postgresql"
+  }
+]

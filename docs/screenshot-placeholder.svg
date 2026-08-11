@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2efe7"/>
+  <rect x="70" y="70" width="1060" height="490" rx="4" fill="#fffdf7" stroke="#17201c" stroke-width="3"/>
+  <text x="110" y="160" fill="#17201c" font-family="Arial, sans-serif" font-size="24" font-weight="700">EVIDENCE, NOT INVENTION</text>
+  <text x="110" y="245" fill="#17201c" font-family="Arial, sans-serif" font-size="58" font-weight="700">Job Application</text>
+  <text x="110" y="310" fill="#17201c" font-family="Arial, sans-serif" font-size="58" font-weight="700">Copilot</text>
+  <rect x="110" y="375" width="430" height="96" fill="#d9ff52" stroke="#17201c" stroke-width="3"/>
+  <text x="140" y="433" fill="#17201c" font-family="Arial, sans-serif" font-size="25" font-weight="700">Evidence-grounded matching →</text>
+  <rect x="700" y="155" width="340" height="66" fill="#d9ff52" stroke="#17201c" stroke-width="3"/>
+  <rect x="700" y="245" width="340" height="66" fill="#ffd36a" stroke="#17201c" stroke-width="3"/>
+  <rect x="700" y="335" width="340" height="66" fill="#ff765f" stroke="#17201c" stroke-width="3"/>
+  <text x="725" y="197" fill="#17201c" font-family="Arial, sans-serif" font-size="21" font-weight="700">SUPPORTED</text>
+  <text x="725" y="287" fill="#17201c" font-family="Arial, sans-serif" font-size="21" font-weight="700">PARTIAL</text>
+  <text x="725" y="377" fill="#17201c" font-family="Arial, sans-serif" font-size="21" font-weight="700">MISSING</text>
+</svg>
+
