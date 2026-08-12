@@ -7,9 +7,9 @@ Dataset: `golden_dataset.json` (32 cases)
 | Split | Cases | Accuracy | Macro F1 | Recall@5 | Citation precision | False supported |
 |---|---:|---:|---:|---:|---:|---:|
 | dev | 12 | 91.7% | 91.5% | 87.5% | 100.0% | 0.0% |
-| validation | 10 | 70.0% | 66.7% | 71.4% | 100.0% | 0.0% |
+| validation | 10 | 70.0% | 66.7% | 57.1% | 100.0% | 0.0% |
 | test | 10 | 80.0% | 80.2% | 71.4% | 100.0% | 0.0% |
-| all | 32 | 81.2% | 80.7% | 77.3% | 100.0% | 0.0% |
+| all | 32 | 81.2% | 80.7% | 72.7% | 100.0% | 0.0% |
 
 ## Held-out test classification
 

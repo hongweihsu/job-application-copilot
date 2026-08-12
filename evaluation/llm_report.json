@@ -1,0 +1,464 @@
+{
+  "pipeline": "llm-structured-v1",
+  "model": "gpt-5-mini",
+  "dataset": "golden_dataset.json",
+  "evaluated_split": "validation",
+  "splits": {
+    "all": {
+      "cases": 10,
+      "classification": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "partial": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "missing": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 5,
+            "partial": 0,
+            "missing": 0
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 2,
+            "missing": 0
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 3
+          }
+        }
+      },
+      "retrieval": {
+        "answerable_cases": 7,
+        "recall_at_1": 0.8571428571428571,
+        "precision_at_1": 1.0,
+        "hit_rate_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "precision_at_3": 1.0,
+        "hit_rate_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "hit_rate_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "citations": {
+        "citation_precision": 1.0,
+        "citation_coverage": 1.0,
+        "total_citations": 9
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.1,
+        "violations": [
+          {
+            "case_id": "validation-node-typescript-partial",
+            "claims": [
+              "TypeScript experience"
+            ]
+          }
+        ]
+      },
+      "case_results": [
+        {
+          "case_id": "validation-restful-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "FastAPI experience"
+          ],
+          "generated_text": "Resume evidence [resume-s1] explicitly states designing Python web services and following RESTful interface principles, which directly satisfies the requirement for Python REST API development experience.\nOptionally strengthen the resume by specifying frameworks/tools used (e.g., Flask, Django REST Framework), types/number of endpoints or services built, testing/deployment practices, or project context \u2014 but do not add specifics unless they are true and can be supported."
+        },
+        {
+          "case_id": "validation-amazon-web-services-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "AWS certification"
+          ],
+          "generated_text": "resume-s1 explicitly states the candidate deployed containerised services to Amazon Web Services using managed compute, which directly demonstrates hands-on AWS deployment experience. resume-s2 only references documentation and does not itself demonstrate deployment activity.\nTo strengthen the match, explicitly list the AWS services and deployment tools used (e.g., ECS/EKS/EC2, load balancers, CI/CD), describe specific hands-on tasks performed (e.g., configuring clusters, pushing images, running deployments), and, if possible, note scope or frequency of deployments."
+        },
+        {
+          "case_id": "validation-python-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Python experience"
+          ],
+          "generated_text": "None of the supplied resume items mention Python. Evidence describes Java services and build/release scripts/documentation but does not state development in Python or use of Python tools/libraries, so the requirement is not supported.\nIf the candidate has professional Python experience, add explicit resume lines such as: role/title, employer, dates, and concrete bullet(s) stating Python development work (e.g., libraries/frameworks used, components built, scope). If no Python experience exists, consider training or projects to gain demonstrable professional Python experience before applying."
+        },
+        {
+          "case_id": "validation-teamwork-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "team leadership experience"
+          ],
+          "generated_text": "Resume evidence resume-s1 explicitly states the candidate 'demonstrated teamwork by pairing with engineers and designers across two product squads,' which directly shows cross-functional collaboration and satisfies the requirement for teamwork skills.\nTo strengthen the match, the resume could add brief, supported details about the nature or impact of the teamwork (e.g., outcomes achieved, scope of collaboration, or duration) without inventing new experiences."
+        },
+        {
+          "case_id": "validation-communication-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "public speaking experience"
+          ],
+          "generated_text": "Resume item [resume-s1] shows written communication ability (wrote technical documentation). There is no supplied evidence demonstrating verbal communication (presentations, meetings, stakeholder briefings, or similar), so the requirement for both excellent verbal and written skills is not fully met.\nTo support the verbal communication part, add resume lines that explicitly describe verbally communicating technical information (for example: presenting to stakeholders, leading meetings or demos, conducting training/knowledge transfers, or client-facing discussions). Keep descriptions factual and include audience or context where possible (e.g., \"Presented weekly release updates to cross-functional team of X\")."
+        },
+        {
+          "case_id": "validation-rag-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "forbidden_claims": [
+            "production RAG experience"
+          ],
+          "generated_text": "resume-s1 directly states the candidate built a RAG assistant that answered questions from product documentation, which demonstrates practical RAG application development. resume-s2 (automated tests for citation output) further supports hands-on work related to RAG behavior (citation handling). Together they cover the requirement.\nTo make this even clearer on a resume, state relevant details such as the technologies used (vector store/retriever, LLM), your role/responsibility, deployment or production status, scale or dataset size, and concrete outcomes or metrics. Do not add specifics unless they are accurate."
+        },
+        {
+          "case_id": "validation-node-typescript-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "forbidden_claims": [
+            "TypeScript experience"
+          ],
+          "generated_text": "resume-s1 explicitly shows Node.js experience. None of the provided evidence mentions TypeScript. resume-s2 shows JavaScript test work but does not demonstrate TypeScript usage, so the TypeScript requirement is unsupported.\nAsk the candidate to add explicit TypeScript experience (e.g., .ts files, TS projects, use of tsc/tsconfig, typed APIs, or migration from JS to TS). If they have TypeScript experience, include a concise bullet noting tools, contexts, or examples; otherwise note lack of TypeScript expertise."
+        },
+        {
+          "case_id": "validation-git-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "GitHub administration experience"
+          ],
+          "generated_text": "Resume evidence resume-s1 states explicit use of Git for feature branching, code review, and collaborative software delivery, which directly demonstrates proficiency with Git.\nIf possible, quantify scope or highlight specific Git workflows/tools (e.g., Git CLI, branching strategy, merge vs. rebase, pull request process) to strengthen the resume, but do not add skills not already demonstrated."
+        },
+        {
+          "case_id": "validation-react-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "React experience"
+          ],
+          "generated_text": "None of the provided resume items mention React, JavaScript frameworks, JSX, or single-page application/component-based development. The evidence only cites server-rendered templates with Python/HTML and SQL query maintenance, which do not demonstrate professional React experience.\nIf the candidate has React experience, add explicit resume bullets such as: projects or roles using React (including hooks, components, JSX), libraries or tools used (e.g., Redux, React Router, Webpack), scope (features built, production deployment), and timeframe or employer. If no React experience, consider training or contributing to React projects and then updating the resume with concrete examples."
+        },
+        {
+          "case_id": "validation-agile-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Agile experience"
+          ],
+          "generated_text": "None of the supplied resume items indicate working on a team or using Agile methodologies. Both items describe independent academic work and written reporting, which do not demonstrate experience in Agile software teams.\nRevise the resume to include explicit examples of Agile team experience if available: cite team-based software projects, your role on a cross-functional team, Agile practices used (e.g., Scrum, sprints, stand-ups, retrospectives), tools (e.g., Jira, Trello), and concrete contributions within those iterations. If you lack Agile experience, consider joining a team project or taking an Agile course/certification and then documenting that experience."
+        }
+      ]
+    },
+    "validation": {
+      "cases": 10,
+      "classification": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 5
+          },
+          "partial": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 2
+          },
+          "missing": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 5,
+            "partial": 0,
+            "missing": 0
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 2,
+            "missing": 0
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 3
+          }
+        }
+      },
+      "retrieval": {
+        "answerable_cases": 7,
+        "recall_at_1": 0.8571428571428571,
+        "precision_at_1": 1.0,
+        "hit_rate_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "precision_at_3": 1.0,
+        "hit_rate_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "precision_at_5": 1.0,
+        "hit_rate_at_5": 1.0,
+        "mrr": 1.0
+      },
+      "citations": {
+        "citation_precision": 1.0,
+        "citation_coverage": 1.0,
+        "total_citations": 9
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.1,
+        "violations": [
+          {
+            "case_id": "validation-node-typescript-partial",
+            "claims": [
+              "TypeScript experience"
+            ]
+          }
+        ]
+      },
+      "case_results": [
+        {
+          "case_id": "validation-restful-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "FastAPI experience"
+          ],
+          "generated_text": "Resume evidence [resume-s1] explicitly states designing Python web services and following RESTful interface principles, which directly satisfies the requirement for Python REST API development experience.\nOptionally strengthen the resume by specifying frameworks/tools used (e.g., Flask, Django REST Framework), types/number of endpoints or services built, testing/deployment practices, or project context \u2014 but do not add specifics unless they are true and can be supported."
+        },
+        {
+          "case_id": "validation-amazon-web-services-synonym-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "AWS certification"
+          ],
+          "generated_text": "resume-s1 explicitly states the candidate deployed containerised services to Amazon Web Services using managed compute, which directly demonstrates hands-on AWS deployment experience. resume-s2 only references documentation and does not itself demonstrate deployment activity.\nTo strengthen the match, explicitly list the AWS services and deployment tools used (e.g., ECS/EKS/EC2, load balancers, CI/CD), describe specific hands-on tasks performed (e.g., configuring clusters, pushing images, running deployments), and, if possible, note scope or frequency of deployments."
+        },
+        {
+          "case_id": "validation-python-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Python experience"
+          ],
+          "generated_text": "None of the supplied resume items mention Python. Evidence describes Java services and build/release scripts/documentation but does not state development in Python or use of Python tools/libraries, so the requirement is not supported.\nIf the candidate has professional Python experience, add explicit resume lines such as: role/title, employer, dates, and concrete bullet(s) stating Python development work (e.g., libraries/frameworks used, components built, scope). If no Python experience exists, consider training or projects to gain demonstrable professional Python experience before applying."
+        },
+        {
+          "case_id": "validation-teamwork-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "team leadership experience"
+          ],
+          "generated_text": "Resume evidence resume-s1 explicitly states the candidate 'demonstrated teamwork by pairing with engineers and designers across two product squads,' which directly shows cross-functional collaboration and satisfies the requirement for teamwork skills.\nTo strengthen the match, the resume could add brief, supported details about the nature or impact of the teamwork (e.g., outcomes achieved, scope of collaboration, or duration) without inventing new experiences."
+        },
+        {
+          "case_id": "validation-communication-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "public speaking experience"
+          ],
+          "generated_text": "Resume item [resume-s1] shows written communication ability (wrote technical documentation). There is no supplied evidence demonstrating verbal communication (presentations, meetings, stakeholder briefings, or similar), so the requirement for both excellent verbal and written skills is not fully met.\nTo support the verbal communication part, add resume lines that explicitly describe verbally communicating technical information (for example: presenting to stakeholders, leading meetings or demos, conducting training/knowledge transfers, or client-facing discussions). Keep descriptions factual and include audience or context where possible (e.g., \"Presented weekly release updates to cross-functional team of X\")."
+        },
+        {
+          "case_id": "validation-rag-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "forbidden_claims": [
+            "production RAG experience"
+          ],
+          "generated_text": "resume-s1 directly states the candidate built a RAG assistant that answered questions from product documentation, which demonstrates practical RAG application development. resume-s2 (automated tests for citation output) further supports hands-on work related to RAG behavior (citation handling). Together they cover the requirement.\nTo make this even clearer on a resume, state relevant details such as the technologies used (vector store/retriever, LLM), your role/responsibility, deployment or production status, scale or dataset size, and concrete outcomes or metrics. Do not add specifics unless they are accurate."
+        },
+        {
+          "case_id": "validation-node-typescript-partial",
+          "split": "validation",
+          "expected_status": "partial",
+          "predicted_status": "partial",
+          "expected_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2"
+          ],
+          "forbidden_claims": [
+            "TypeScript experience"
+          ],
+          "generated_text": "resume-s1 explicitly shows Node.js experience. None of the provided evidence mentions TypeScript. resume-s2 shows JavaScript test work but does not demonstrate TypeScript usage, so the TypeScript requirement is unsupported.\nAsk the candidate to add explicit TypeScript experience (e.g., .ts files, TS projects, use of tsc/tsconfig, typed APIs, or migration from JS to TS). If they have TypeScript experience, include a concise bullet noting tools, contexts, or examples; otherwise note lack of TypeScript expertise."
+        },
+        {
+          "case_id": "validation-git-supported",
+          "split": "validation",
+          "expected_status": "supported",
+          "predicted_status": "supported",
+          "expected_evidence_ids": [
+            "resume-s1"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1"
+          ],
+          "forbidden_claims": [
+            "GitHub administration experience"
+          ],
+          "generated_text": "Resume evidence resume-s1 states explicit use of Git for feature branching, code review, and collaborative software delivery, which directly demonstrates proficiency with Git.\nIf possible, quantify scope or highlight specific Git workflows/tools (e.g., Git CLI, branching strategy, merge vs. rebase, pull request process) to strengthen the resume, but do not add skills not already demonstrated."
+        },
+        {
+          "case_id": "validation-react-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "React experience"
+          ],
+          "generated_text": "None of the provided resume items mention React, JavaScript frameworks, JSX, or single-page application/component-based development. The evidence only cites server-rendered templates with Python/HTML and SQL query maintenance, which do not demonstrate professional React experience.\nIf the candidate has React experience, add explicit resume bullets such as: projects or roles using React (including hooks, components, JSX), libraries or tools used (e.g., Redux, React Router, Webpack), scope (features built, production deployment), and timeframe or employer. If no React experience, consider training or contributing to React projects and then updating the resume with concrete examples."
+        },
+        {
+          "case_id": "validation-agile-missing",
+          "split": "validation",
+          "expected_status": "missing",
+          "predicted_status": "missing",
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [],
+          "forbidden_claims": [
+            "Agile experience"
+          ],
+          "generated_text": "None of the supplied resume items indicate working on a team or using Agile methodologies. Both items describe independent academic work and written reporting, which do not demonstrate experience in Agile software teams.\nRevise the resume to include explicit examples of Agile team experience if available: cite team-based software projects, your role on a cross-functional team, Agile practices used (e.g., Scrum, sprints, stand-ups, retrospectives), tools (e.g., Jira, Trello), and concrete contributions within those iterations. If you lack Agile experience, consider joining a team project or taking an Agile course/certification and then documenting that experience."
+        }
+      ]
+    }
+  }
+}

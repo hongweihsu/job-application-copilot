@@ -62,6 +62,25 @@ See the [full baseline report](evaluation/baseline_report.md), including per-cla
 confusion matrix. These results describe this dataset only; they are not claims about real-world
 accuracy.
 
+### First LLM validation experiment
+
+The first `gpt-5-mini` structured-output run used the 10-case validation split—not the held-out test
+split—so the prompt can still be improved without contaminating the final comparison.
+
+| Validation metric | Deterministic baseline | Structured LLM |
+|---|---:|---:|
+| Classification accuracy | 70.0% | 100.0% |
+| Macro F1 | 66.7% | 100.0% |
+| Evidence Recall@5 | 57.1% | 100.0% |
+| Citation precision | 100.0% | 100.0% |
+| Citation coverage | 71.4% | 100.0% |
+| False-supported rate | 0.0% | 0.0% |
+| Unsupported-claim rate | 0.0% | 10.0% |
+
+The LLM understood synonym and semantic cases missed by keyword matching, but one recommendation
+used unsafe wording around absent TypeScript experience. This failure is retained as a prompt-v2
+test case rather than hidden by an aggregate score. See the [LLM report](evaluation/llm_report.json).
+
 ## Run locally
 
 Install [uv](https://docs.astral.sh/uv/), then:
@@ -111,6 +130,12 @@ To run a paid LLM experiment on the validation split:
 
 ```bash
 uv run python -m evaluation.run_llm_evaluation --split validation --write-report
+```
+
+After changing only labels or metric logic, recalculate the saved outputs without new API calls:
+
+```bash
+uv run python -m evaluation.run_llm_evaluation --split validation --reuse-report --write-report
 ```
 
 Use `validation` while selecting prompts or models. Run the held-out `test` split only after the

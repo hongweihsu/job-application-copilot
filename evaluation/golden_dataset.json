@@ -212,7 +212,7 @@
     ],
     "requirement": "Practical RAG application development experience is required.",
     "expected_status": "supported",
-    "expected_evidence_ids": ["resume-s1"],
+    "expected_evidence_ids": ["resume-s1", "resume-s2"],
     "forbidden_claims": ["production RAG experience"]
   },
   {
@@ -224,7 +224,7 @@
     ],
     "requirement": "Node.js and TypeScript experience is required.",
     "expected_status": "partial",
-    "expected_evidence_ids": ["resume-s1"],
+    "expected_evidence_ids": ["resume-s1", "resume-s2"],
     "forbidden_claims": ["TypeScript experience"]
   },
   {

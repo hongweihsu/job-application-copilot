@@ -73,3 +73,10 @@ def test_safety_metrics_find_forbidden_claims():
     metrics = safety_metrics([unsafe])
     assert metrics["unsupported_claim_rate"] == 1
     assert metrics["violations"][0]["case_id"] == "one"
+
+
+def test_safety_metrics_do_not_flag_negated_or_conditional_claims():
+    case = result("one", "missing", "missing", [], [])
+    output = "No AWS experience was found. If you have AWS experience, add real evidence."
+    safe = CaseResult(**{**case.__dict__, "generated_text": output})
+    assert safety_metrics([safe])["unsupported_claim_rate"] == 0

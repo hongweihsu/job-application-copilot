@@ -48,13 +48,13 @@
       },
       "retrieval": {
         "answerable_cases": 22,
-        "recall_at_1": 0.7727272727272727,
+        "recall_at_1": 0.7272727272727273,
         "precision_at_1": 0.7727272727272727,
         "hit_rate_at_1": 0.7727272727272727,
-        "recall_at_3": 0.7727272727272727,
+        "recall_at_3": 0.7272727272727273,
         "precision_at_3": 0.7727272727272727,
         "hit_rate_at_3": 0.7727272727272727,
-        "recall_at_5": 0.7727272727272727,
+        "recall_at_5": 0.7272727272727273,
         "precision_at_5": 0.7727272727272727,
         "hit_rate_at_5": 0.7727272727272727,
         "mrr": 0.7727272727272727
@@ -323,7 +323,8 @@
           "expected_status": "supported",
           "predicted_status": "supported",
           "expected_evidence_ids": [
-            "resume-s1"
+            "resume-s1",
+            "resume-s2"
           ],
           "retrieved_evidence_ids": [
             "resume-s1"
@@ -339,7 +340,8 @@
           "expected_status": "partial",
           "predicted_status": "partial",
           "expected_evidence_ids": [
-            "resume-s1"
+            "resume-s1",
+            "resume-s2"
           ],
           "retrieved_evidence_ids": [
             "resume-s1"
@@ -826,13 +828,13 @@
       },
       "retrieval": {
         "answerable_cases": 7,
-        "recall_at_1": 0.7142857142857143,
+        "recall_at_1": 0.5714285714285714,
         "precision_at_1": 0.7142857142857143,
         "hit_rate_at_1": 0.7142857142857143,
-        "recall_at_3": 0.7142857142857143,
+        "recall_at_3": 0.5714285714285714,
         "precision_at_3": 0.7142857142857143,
         "hit_rate_at_3": 0.7142857142857143,
-        "recall_at_5": 0.7142857142857143,
+        "recall_at_5": 0.5714285714285714,
         "precision_at_5": 0.7142857142857143,
         "hit_rate_at_5": 0.7142857142857143,
         "mrr": 0.7142857142857143
@@ -925,7 +927,8 @@
           "expected_status": "supported",
           "predicted_status": "supported",
           "expected_evidence_ids": [
-            "resume-s1"
+            "resume-s1",
+            "resume-s2"
           ],
           "retrieved_evidence_ids": [
             "resume-s1"
@@ -941,7 +944,8 @@
           "expected_status": "partial",
           "predicted_status": "partial",
           "expected_evidence_ids": [
-            "resume-s1"
+            "resume-s1",
+            "resume-s2"
           ],
           "retrieved_evidence_ids": [
             "resume-s1"
