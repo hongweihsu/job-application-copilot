@@ -4,9 +4,9 @@ An evidence-grounded resume and job-description matcher. It identifies which req
 supported, partially supported, or missing—and refuses to invent experience that is not present in
 the resume.
 
-> **Milestone 2:** This repository contains a transparent deterministic baseline and a versioned,
-> manually labelled evaluation suite. It is useful without an API key and creates a measurable
-> benchmark before RAG and LLM components are introduced.
+> **Milestone 3:** This repository contains a transparent deterministic baseline, a versioned
+> evaluation suite, and an optional structured-output LLM pipeline. The baseline remains available
+> without an API key and provides the comparison point for every AI-powered version.
 
 ## Why this project exists
 
@@ -24,6 +24,10 @@ positive assessment must cite resume text, while missing experience must remain 
 - Validate structured API responses with Pydantic
 - Run a golden-dataset evaluation in CI
 - Compare classification, retrieval, citation, and safety metrics across data splits
+- Run semantic requirement analysis with schema-validated LLM output
+- Reject unknown citations and logically inconsistent model responses
+- Record the model and prompt version used for every LLM analysis
+- Configure provider timeout and retry behaviour
 - Run locally or with Docker without an API key
 
 ## Demo
@@ -38,8 +42,8 @@ PDF / pasted resume ──> text extraction ──> evidence units ─┐
 Job description ──────> requirement extraction ─────────────┘
 ```
 
-The next milestone will replace the baseline matcher with an evaluated retrieval pipeline while
-preserving the same schemas and golden dataset.
+The next milestone will add and compare BM25, vector, hybrid, and reranked retrieval while preserving
+the same schemas and golden dataset.
 
 ## Baseline results
 
@@ -70,6 +74,22 @@ uv run uvicorn app.main:app --reload
 Open <http://localhost:8000>. API documentation is available at
 <http://localhost:8000/docs>.
 
+### Enable optional LLM analysis
+
+The deterministic baseline is always available. To enable paid LLM analysis, copy `.env.example` to
+`.env`, add your own OpenAI API key, and set:
+
+```dotenv
+OPENAI_API_KEY=your-key-here
+OPENAI_MODEL=gpt-5-mini
+OPENAI_TIMEOUT_SECONDS=30
+OPENAI_MAX_RETRIES=2
+LLM_ANALYSIS_ENABLED=true
+```
+
+The key is loaded only from the environment or the ignored `.env` file. Never commit it. The LLM
+pipeline uses the official OpenAI SDK's structured-output parser with a Pydantic schema.
+
 Alternatively, use Docker:
 
 ```bash
@@ -86,6 +106,15 @@ uv run python -m evaluation.run_evaluation --check
 
 The evaluation command checks versioned minimum and maximum quality thresholds, so regressions fail
 the GitHub Actions workflow.
+
+To run a paid LLM experiment on the validation split:
+
+```bash
+uv run python -m evaluation.run_llm_evaluation --split validation --write-report
+```
+
+Use `validation` while selecting prompts or models. Run the held-out `test` split only after the
+configuration is frozen.
 
 ## API example
 
@@ -108,6 +137,11 @@ curl -X POST http://localhost:8000/api/analyze \
 - [x] Add development, validation, and held-out test splits
 - [x] Add classification, retrieval, citation, and safety metrics
 - [x] Freeze baseline regression thresholds
+- [x] Add optional LLM structured analysis
+- [x] Add Pydantic grounding invariants and citation validation
+- [x] Add prompt and model version metadata
+- [x] Add configurable timeout and transient-request retries
+- [x] Add an LLM evaluation runner using the same golden dataset
 - [ ] Add full-text and vector retrieval baselines
 - [ ] Compare vector, hybrid, and reranked retrieval
 - [ ] Add request tracing, latency, token, and cost metrics

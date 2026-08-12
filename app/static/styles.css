@@ -21,6 +21,10 @@ main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 64px 0 96
 h1 { margin: 12px 0 18px; font-size: clamp(44px, 8vw, 88px); line-height: .93; letter-spacing: -.065em; }
 .hero p { max-width: 680px; font-size: 19px; line-height: 1.6; color: var(--muted); }
 .workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.mode-panel { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); background: var(--card); }
+.mode-panel label { font-weight: 800; }
+.mode-panel select { padding: 8px 10px; border: 1px solid var(--ink); background: white; font: inherit; }
+.mode-panel span { color: var(--muted); font-size: 13px; }
 .input-panel, .score-card, .match-card { border: 1px solid var(--line); background: var(--card); box-shadow: 6px 6px 0 var(--ink); }
 .input-panel { padding: 22px; }
 .panel-heading, .panel-heading > div { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
@@ -58,4 +62,3 @@ textarea:focus { outline: 3px solid var(--lime); border-color: var(--ink); }
   .score-card, .counts { align-items: start; flex-direction: column; }
   .counts { gap: 6px; }
 }
-

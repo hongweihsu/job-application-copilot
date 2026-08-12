@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field, model_validator
 class AnalysisRequest(BaseModel):
     resume_text: str = Field(min_length=30, max_length=50_000)
     job_description: str = Field(min_length=30, max_length=30_000)
+    analysis_mode: Literal["baseline", "llm"] = "baseline"
 
 
 class Evidence(BaseModel):
@@ -39,3 +40,6 @@ class AnalysisResponse(BaseModel):
     summary: AnalysisSummary
     matches: list[RequirementMatch]
     disclaimer: str
+    analyzer: Literal["deterministic", "llm"] = "deterministic"
+    model: str | None = None
+    prompt_version: str | None = None

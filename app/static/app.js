@@ -4,6 +4,22 @@ const fileInput = document.querySelector("#resume-file");
 const analyzeButton = document.querySelector("#analyze");
 const message = document.querySelector("#message");
 const results = document.querySelector("#results");
+const analysisMode = document.querySelector("#analysis-mode");
+const modeHelp = document.querySelector("#mode-help");
+
+fetch("/api/config")
+  .then((response) => response.json())
+  .then((config) => {
+    const llmOption = analysisMode.querySelector('option[value="llm"]');
+    llmOption.disabled = !config.llm_analysis_enabled;
+    if (!config.llm_analysis_enabled) llmOption.textContent += " (not configured)";
+  });
+
+analysisMode.addEventListener("change", () => {
+  modeHelp.textContent = analysisMode.value === "llm"
+    ? "Semantic analysis with validated structured output; API usage may incur cost."
+    : "Free, fast, and fully reproducible.";
+});
 
 fileInput.addEventListener("change", async () => {
   const file = fileInput.files[0];
@@ -31,7 +47,11 @@ analyzeButton.addEventListener("click", async () => {
     const response = await fetch("/api/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ resume_text: resumeInput.value, job_description: jobInput.value }),
+      body: JSON.stringify({
+        resume_text: resumeInput.value,
+        job_description: jobInput.value,
+        analysis_mode: analysisMode.value,
+      }),
     });
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.detail?.[0]?.msg || payload.detail || "Analysis failed.");
@@ -86,4 +106,3 @@ function createMatchCard(match) {
   card.append(recommendation);
   return card;
 }
-

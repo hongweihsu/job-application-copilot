@@ -4,8 +4,12 @@ import pymupdf
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from openai import OpenAIError
 
 from app.analyzer import analyze
+from app.llm.analyzer import analyze_with_llm
+from app.llm.config import LLMConfig, llm_analysis_enabled
+from app.llm.provider import OpenAIRequirementDecisionProvider
 from app.models import AnalysisRequest, AnalysisResponse
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -27,6 +31,11 @@ def index() -> FileResponse:
 @app.get("/api/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/api/config")
+def public_config() -> dict[str, bool]:
+    return {"llm_analysis_enabled": llm_analysis_enabled()}
 
 
 @app.post("/api/extract-resume")
@@ -51,4 +60,14 @@ async def extract_resume(file: UploadFile = File(...)) -> dict[str, str]:
 
 @app.post("/api/analyze", response_model=AnalysisResponse)
 def analyze_application(request: AnalysisRequest) -> AnalysisResponse:
+    if request.analysis_mode == "llm":
+        if not llm_analysis_enabled():
+            raise HTTPException(status_code=503, detail="LLM analysis is not enabled.")
+        try:
+            provider = OpenAIRequirementDecisionProvider(LLMConfig.from_environment())
+            return analyze_with_llm(request.resume_text, request.job_description, provider)
+        except OpenAIError as exc:
+            raise HTTPException(status_code=502, detail="The LLM provider request failed.") from exc
+        except ValueError as exc:
+            raise HTTPException(status_code=502, detail=str(exc)) from exc
     return analyze(request.resume_text, request.job_description)

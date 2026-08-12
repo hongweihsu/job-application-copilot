@@ -19,6 +19,14 @@
       </header>
 
       <section class="workspace" aria-label="Application analysis form">
+        <div class="mode-panel">
+          <label for="analysis-mode">Analysis method</label>
+          <select id="analysis-mode">
+            <option value="baseline">Deterministic baseline</option>
+            <option value="llm">LLM structured analysis</option>
+          </select>
+          <span id="mode-help">Free, fast, and fully reproducible.</span>
+        </div>
         <div class="input-panel">
           <div class="panel-heading">
             <div><span>01</span><h2>Your resume</h2></div>
@@ -60,4 +68,3 @@
     <script src="/static/app.js" defer></script>
   </body>
 </html>
-
