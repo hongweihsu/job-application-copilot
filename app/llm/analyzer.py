@@ -3,6 +3,7 @@ from app.llm.models import LLMRequirementDecision
 from app.llm.prompt import PROMPT_VERSION
 from app.llm.provider import RequirementDecisionProvider
 from app.models import AnalysisResponse, AnalysisSummary, Evidence, RequirementMatch
+from app.retrieval import BM25Retriever, EvidenceRetriever
 
 
 def _score(matches: list[RequirementMatch]) -> AnalysisSummary:
@@ -31,22 +32,27 @@ def analyze_with_llm(
     resume_text: str,
     job_description: str,
     provider: RequirementDecisionProvider,
+    retriever: EvidenceRetriever | None = None,
+    top_k: int = 5,
 ) -> AnalysisResponse:
     evidence_by_id = {
         f"resume-s{index}": sentence
         for index, sentence in enumerate(_sentences(resume_text), start=1)
     }
     evidence_units = list(evidence_by_id.items())
+    active_retriever = retriever if retriever is not None else BM25Retriever()
     matches = []
     for requirement in extract_requirements(job_description):
-        decision = provider.decide(requirement, evidence_units)
+        retrieved = active_retriever.retrieve(requirement, evidence_units, top_k=top_k)
+        retrieved_by_id = {item.evidence_id: item.text for item in retrieved}
+        decision = provider.decide(requirement, list(retrieved_by_id.items()))
         matches.append(
             RequirementMatch(
                 requirement=requirement,
                 status=decision.status,
                 confidence=decision.confidence,
                 matched_terms=decision.matched_terms,
-                evidence=_validated_evidence(decision, evidence_by_id),
+                evidence=_validated_evidence(decision, retrieved_by_id),
                 recommendation=decision.recommendation,
             )
         )
