@@ -1,9 +1,9 @@
 # Golden Dataset V2
 
-Version 2 is a resume-level retrieval benchmark. It contains five realistic synthetic resume
-profiles and twenty requirement cases. Each profile has twelve stable evidence units and belongs
-entirely to one split, preventing the same resume from leaking across development, validation, and
-test data.
+Version 2 is a resume-level retrieval benchmark. It contains thirteen realistic synthetic resume
+profiles and fifty-two requirement cases. Each profile has ten to twelve stable evidence units and
+belongs entirely to one split, preventing the same resume from leaking across development,
+validation, and test data.
 
 ## Coverage
 
@@ -18,9 +18,9 @@ test data.
 
 | Split | Profiles | Cases | Intended use |
 |---|---:|---:|---|
-| dev | 3 | 12 | Error analysis and retriever changes |
-| validation | 1 | 4 | Model and parameter selection |
-| test | 1 | 4 | Final comparison after design decisions are frozen |
+| dev | 7 | 28 | Error analysis and retriever changes |
+| validation | 3 | 12 | Model and parameter selection |
+| test | 3 | 12 | Final comparison after design decisions are frozen |
 
 Retrieval development must use the dev split. Validation can be checked after a proposed change is
 stable. The test split should not be used to choose stopwords, aliases, stemming rules, embedding

@@ -91,6 +91,138 @@
         {"id": "resume-s11", "text": "Added structured JSON validation for inbound webhook events using Pydantic."},
         {"id": "resume-s12", "text": "Reduced failed onboarding submissions by 21% after analyzing validation errors."}
       ]
+    },
+    {
+      "id": "dev-security-engineer",
+      "split": "dev",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Security engineer supporting identity, vulnerability management, and incident response programs."},
+        {"id": "resume-s2", "text": "Designed least-privilege AWS IAM roles and reviewed access policies for twelve engineering teams."},
+        {"id": "resume-s3", "text": "Triaged critical container vulnerabilities and coordinated remediation with service owners."},
+        {"id": "resume-s4", "text": "Investigated authentication incidents using Splunk searches and cloud audit logs."},
+        {"id": "resume-s5", "text": "Reviewed Kubernetes security dashboards but have not administered production clusters."},
+        {"id": "resume-s6", "text": "Reviewed Terraform pull requests while infrastructure modules remained owned by the platform team."},
+        {"id": "resume-s7", "text": "Built Python scripts to identify stale credentials and notify account owners."},
+        {"id": "resume-s8", "text": "Presented security risks and remediation options to product and engineering managers."},
+        {"id": "resume-s9", "text": "Completed vendor training for cloud security without pursuing a professional certification."},
+        {"id": "resume-s10", "text": "Created incident playbooks and detection rules for suspicious login activity."}
+      ]
+    },
+    {
+      "id": "dev-mobile-engineer",
+      "split": "dev",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Mobile engineer building consumer banking applications for Android devices."},
+        {"id": "resume-s2", "text": "Developed Kotlin and Jetpack Compose features used by 160,000 monthly customers."},
+        {"id": "resume-s3", "text": "Implemented biometric login and secure local storage with the Android Keystore."},
+        {"id": "resume-s4", "text": "Fixed several Swift user-interface defects but did not own an iOS application."},
+        {"id": "resume-s5", "text": "Evaluated React Native during a hackathon without shipping it to customers."},
+        {"id": "resume-s6", "text": "Reduced application startup time by 24% through profiling and lazy initialization."},
+        {"id": "resume-s7", "text": "Added TalkBack labels and dynamic text support for accessible account screens."},
+        {"id": "resume-s8", "text": "Integrated REST APIs and handled offline synchronization for transaction history."},
+        {"id": "resume-s9", "text": "Configured Firebase Crashlytics alerts and monitored release stability."},
+        {"id": "resume-s10", "text": "Worked with product managers and designers to prioritize customer feedback."},
+        {"id": "resume-s11", "text": "Maintained GitHub Actions workflows for unit tests and Android release builds."},
+        {"id": "resume-s12", "text": "Mentored an intern on Kotlin conventions and mobile testing practices."}
+      ]
+    },
+    {
+      "id": "dev-ml-engineer",
+      "split": "dev",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Machine learning engineer developing fraud-detection models for online transactions."},
+        {"id": "resume-s2", "text": "Trained gradient-boosted models in Python and improved fraud recall by nine percentage points."},
+        {"id": "resume-s3", "text": "Deployed batch inference pipelines with Amazon SageMaker and scheduled daily scoring jobs."},
+        {"id": "resume-s4", "text": "Created feature-quality checks and monitored prediction drift after model releases."},
+        {"id": "resume-s5", "text": "Built a retrieval-augmented generation prototype during an internal innovation week."},
+        {"id": "resume-s6", "text": "The language-model prototype was not approved or operated as a production service."},
+        {"id": "resume-s7", "text": "Queried training datasets with SQL and investigated source-data anomalies."},
+        {"id": "resume-s8", "text": "Ran model workloads on Kubernetes with deployment support from the platform team."},
+        {"id": "resume-s9", "text": "Explained model thresholds and false-positive trade-offs to fraud operations managers."},
+        {"id": "resume-s10", "text": "Reviewed research papers and reproduced experiments before proposing model changes."},
+        {"id": "resume-s11", "text": "Added automated tests for preprocessing code and model-serving request schemas."},
+        {"id": "resume-s12", "text": "Documented rollback procedures and participated in post-release model reviews."}
+      ]
+    },
+    {
+      "id": "dev-delivery-manager",
+      "split": "dev",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Delivery manager coordinating software releases across payments and customer-service teams."},
+        {"id": "resume-s2", "text": "Facilitated Scrum planning, retrospectives, and dependency reviews for three Agile squads."},
+        {"id": "resume-s3", "text": "Maintained delivery roadmaps in Jira and reported milestone risks to senior stakeholders."},
+        {"id": "resume-s4", "text": "Coordinated a cloud migration while architecture and implementation were owned by engineers."},
+        {"id": "resume-s5", "text": "Tracked vendor invoices but did not own departmental budgets or financial forecasts."},
+        {"id": "resume-s6", "text": "Created SQL-based delivery dashboards with support from a data analyst."},
+        {"id": "resume-s7", "text": "Resolved priority conflicts between product, compliance, operations, and engineering groups."},
+        {"id": "resume-s8", "text": "Managed release communications and go-live checklists for customer-facing changes."},
+        {"id": "resume-s9", "text": "Have not worked as a software engineer or written production application code."},
+        {"id": "resume-s10", "text": "Coached team leads on estimation, risk escalation, and continuous improvement."}
+      ]
+    },
+    {
+      "id": "validation-site-reliability-engineer",
+      "split": "validation",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Site reliability engineer maintaining services for a high-volume media platform."},
+        {"id": "resume-s2", "text": "Participated in a 24-hour on-call rotation and led recovery during customer-impacting incidents."},
+        {"id": "resume-s3", "text": "Operated workloads on Google Kubernetes Engine and automated changes with Terraform."},
+        {"id": "resume-s4", "text": "Defined service-level objectives and error-budget policies with product engineering teams."},
+        {"id": "resume-s5", "text": "Built Prometheus alerts and Grafana dashboards for availability and request latency."},
+        {"id": "resume-s6", "text": "Developed Go utilities for health checks, safe restarts, and incident diagnostics."},
+        {"id": "resume-s7", "text": "Ran blameless incident reviews and tracked corrective actions to completion."},
+        {"id": "resume-s8", "text": "Completed AWS workshops but have not operated production workloads on AWS."},
+        {"id": "resume-s9", "text": "Helped two junior engineers learn operational readiness and debugging techniques."},
+        {"id": "resume-s10", "text": "Maintained GitLab CI pipelines for infrastructure validation and staged deployment."}
+      ]
+    },
+    {
+      "id": "validation-qa-automation-engineer",
+      "split": "validation",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Quality automation engineer testing retail web and order-management applications."},
+        {"id": "resume-s2", "text": "Built Playwright end-to-end tests in TypeScript for checkout and refund journeys."},
+        {"id": "resume-s3", "text": "Maintained Cypress regression tests while the team migrated to Playwright."},
+        {"id": "resume-s4", "text": "Created Python API tests and validated JSON contracts for order services."},
+        {"id": "resume-s5", "text": "Integrated automated tests into GitHub Actions and published failure reports."},
+        {"id": "resume-s6", "text": "Designed k6 performance tests that identified a checkout concurrency bottleneck."},
+        {"id": "resume-s7", "text": "Performed manual Android and iOS release checks without building mobile automation."},
+        {"id": "resume-s8", "text": "Reviewed acceptance criteria with developers, designers, and product managers."},
+        {"id": "resume-s9", "text": "Queried PostgreSQL data to investigate test failures and verify migrations."},
+        {"id": "resume-s10", "text": "Have not used Java or Selenium in a professional project."}
+      ]
+    },
+    {
+      "id": "test-solutions-architect",
+      "split": "test",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Solutions architect designing cloud proposals for retail and logistics customers."},
+        {"id": "resume-s2", "text": "Produced AWS reference architectures covering availability, security, and disaster recovery."},
+        {"id": "resume-s3", "text": "Facilitated discovery workshops with customer executives, engineers, and procurement teams."},
+        {"id": "resume-s4", "text": "Built Python proof-of-concept services to validate integration and throughput assumptions."},
+        {"id": "resume-s5", "text": "Created Terraform demonstrations but did not operate customer production infrastructure."},
+        {"id": "resume-s6", "text": "Completed an Azure architecture certification without delivering an Azure customer project."},
+        {"id": "resume-s7", "text": "Estimated cloud costs and documented trade-offs between managed and self-hosted services."},
+        {"id": "resume-s8", "text": "Explained Kubernetes concepts in proposals but have not administered a cluster."},
+        {"id": "resume-s9", "text": "Reviewed identity, encryption, and network controls with customer security teams."},
+        {"id": "resume-s10", "text": "Mentored two associate architects on discovery, diagramming, and presentation skills."}
+      ]
+    },
+    {
+      "id": "test-graduate-engineer",
+      "split": "test",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Computer science graduate with university projects in Python, Java, and relational databases."},
+        {"id": "resume-s2", "text": "Completed a twelve-week internship building React components for an internal portal."},
+        {"id": "resume-s3", "text": "Built a Python capstone API that stored library records in PostgreSQL."},
+        {"id": "resume-s4", "text": "Trained and evaluated a text-classification model for a machine learning assignment."},
+        {"id": "resume-s5", "text": "Completed an AWS tutorial that deployed a sample application to a temporary account."},
+        {"id": "resume-s6", "text": "Used Docker in a university lab and wrote a basic container configuration."},
+        {"id": "resume-s7", "text": "Configured GitHub Actions to run tests for a group software-engineering project."},
+        {"id": "resume-s8", "text": "Presented the capstone design and evaluation results to lecturers and classmates."},
+        {"id": "resume-s9", "text": "Coordinated tasks for a four-person assignment team without formal management responsibility."},
+        {"id": "resume-s10", "text": "Have not yet supported a production service or held a full-time engineering role."}
+      ]
     }
   ],
   "cases": [
@@ -273,6 +405,294 @@
       "expected_evidence_ids": [],
       "forbidden_claims": ["engineering management experience", "team leadership experience"],
       "tags": ["negation", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-security-aws-identity",
+      "profile_id": "dev-security-engineer",
+      "requirement": "Hands-on AWS identity and access management experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2"],
+      "forbidden_claims": ["AWS account ownership"],
+      "tags": ["abbreviation", "semantic-paraphrase"]
+    },
+    {
+      "id": "v2-dev-security-kubernetes-admin",
+      "profile_id": "dev-security-engineer",
+      "requirement": "Production Kubernetes cluster administration and security hardening.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["Kubernetes administration experience"],
+      "tags": ["negation", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-security-incident-detection",
+      "profile_id": "dev-security-engineer",
+      "requirement": "Security incident investigation, SIEM analysis, and detection engineering experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s4", "resume-s10"],
+      "forbidden_claims": ["malware reverse engineering"],
+      "tags": ["abbreviation", "multi-evidence", "semantic-paraphrase"]
+    },
+    {
+      "id": "v2-dev-security-terraform-ownership",
+      "profile_id": "dev-security-engineer",
+      "requirement": "Ownership of production Terraform modules and infrastructure delivery.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s6"],
+      "forbidden_claims": ["Terraform module ownership"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-dev-mobile-android-kotlin",
+      "profile_id": "dev-mobile-engineer",
+      "requirement": "Commercial Android development using Kotlin and modern UI frameworks.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s3"],
+      "forbidden_claims": ["Java Android experience"],
+      "tags": ["exact-match", "multi-evidence"]
+    },
+    {
+      "id": "v2-dev-mobile-ios-ownership",
+      "profile_id": "dev-mobile-engineer",
+      "requirement": "End-to-end ownership of production iOS applications written in Swift.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s4"],
+      "forbidden_claims": ["production iOS application ownership"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-dev-mobile-react-native",
+      "profile_id": "dev-mobile-engineer",
+      "requirement": "Production React Native application development experience.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["production React Native experience"],
+      "tags": ["training-only", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-mobile-performance-reliability",
+      "profile_id": "dev-mobile-engineer",
+      "requirement": "Mobile performance optimization and production crash monitoring experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s6", "resume-s9"],
+      "forbidden_claims": ["iOS crash monitoring ownership"],
+      "tags": ["semantic-paraphrase", "multi-evidence"]
+    },
+    {
+      "id": "v2-dev-ml-production-mlops",
+      "profile_id": "dev-ml-engineer",
+      "requirement": "Production model training, deployment, monitoring, and MLOps experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s3", "resume-s4"],
+      "forbidden_claims": ["real-time inference ownership"],
+      "tags": ["multi-evidence", "semantic-paraphrase"]
+    },
+    {
+      "id": "v2-dev-ml-production-generative-ai",
+      "profile_id": "dev-ml-engineer",
+      "requirement": "Operating production generative AI and RAG services at scale.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s5"],
+      "forbidden_claims": ["production RAG experience", "production LLM operations"],
+      "tags": ["prototype-only", "negation", "hard-negative"]
+    },
+    {
+      "id": "v2-dev-ml-kubernetes-operations",
+      "profile_id": "dev-ml-engineer",
+      "requirement": "Independent Kubernetes deployment and cluster operations experience.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s8"],
+      "forbidden_claims": ["Kubernetes cluster administration"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-dev-ml-business-communication",
+      "profile_id": "dev-ml-engineer",
+      "requirement": "Ability to explain model performance and risk to non-technical business teams.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s9"],
+      "forbidden_claims": ["executive risk committee presentations"],
+      "tags": ["semantic-paraphrase"]
+    },
+    {
+      "id": "v2-dev-delivery-agile-leadership",
+      "profile_id": "dev-delivery-manager",
+      "requirement": "Leading Agile software delivery across multiple cross-functional teams.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s7"],
+      "forbidden_claims": ["engineering line management"],
+      "tags": ["multi-evidence", "semantic-paraphrase"]
+    },
+    {
+      "id": "v2-dev-delivery-budget-ownership",
+      "profile_id": "dev-delivery-manager",
+      "requirement": "Ownership of annual technology budgets and financial forecasting.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["technology budget ownership", "financial forecasting experience"],
+      "tags": ["negation", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-delivery-software-engineering",
+      "profile_id": "dev-delivery-manager",
+      "requirement": "Recent hands-on production software engineering experience.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["production software engineering experience"],
+      "tags": ["negation", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-delivery-cloud-migration",
+      "profile_id": "dev-delivery-manager",
+      "requirement": "Technical ownership of cloud migration architecture and implementation.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s4"],
+      "forbidden_claims": ["cloud architecture ownership", "cloud implementation experience"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-validation-sre-incident-response",
+      "profile_id": "validation-site-reliability-engineer",
+      "requirement": "Production on-call, incident command, and post-incident improvement experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s7"],
+      "forbidden_claims": ["security incident response leadership"],
+      "tags": ["multi-evidence", "semantic-paraphrase"]
+    },
+    {
+      "id": "v2-validation-sre-gcp-infrastructure",
+      "profile_id": "validation-site-reliability-engineer",
+      "requirement": "Google Cloud Kubernetes and infrastructure-as-code experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s3"],
+      "forbidden_claims": ["Google Cloud networking ownership"],
+      "tags": ["abbreviation", "semantic-paraphrase"]
+    },
+    {
+      "id": "v2-validation-sre-aws-production",
+      "profile_id": "validation-site-reliability-engineer",
+      "requirement": "Hands-on AWS production operations experience.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["AWS production operations experience"],
+      "tags": ["training-only", "negation", "no-evidence"]
+    },
+    {
+      "id": "v2-validation-sre-people-management",
+      "profile_id": "validation-site-reliability-engineer",
+      "requirement": "Formal people management and performance development responsibility.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s9"],
+      "forbidden_claims": ["formal people management experience"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-validation-qa-web-automation",
+      "profile_id": "validation-qa-automation-engineer",
+      "requirement": "Modern browser test automation using Playwright or Cypress and TypeScript.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s3"],
+      "forbidden_claims": ["Selenium experience"],
+      "tags": ["multi-evidence", "exact-match"]
+    },
+    {
+      "id": "v2-validation-qa-mobile-automation",
+      "profile_id": "validation-qa-automation-engineer",
+      "requirement": "Automated native mobile testing for both Android and iOS applications.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s7"],
+      "forbidden_claims": ["mobile test automation experience"],
+      "tags": ["manual-vs-automated", "hard-negative"]
+    },
+    {
+      "id": "v2-validation-qa-performance-testing",
+      "profile_id": "validation-qa-automation-engineer",
+      "requirement": "Performance and load-testing experience for high-traffic web systems.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s6"],
+      "forbidden_claims": ["production capacity planning ownership"],
+      "tags": ["semantic-paraphrase"]
+    },
+    {
+      "id": "v2-validation-qa-java-selenium",
+      "profile_id": "validation-qa-automation-engineer",
+      "requirement": "Professional Java and Selenium automation framework experience.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["Java experience", "Selenium experience"],
+      "tags": ["negation", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-test-architect-aws-design",
+      "profile_id": "test-solutions-architect",
+      "requirement": "Designing secure and resilient Amazon Web Services architectures for customers.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s9"],
+      "forbidden_claims": ["AWS production operations ownership"],
+      "tags": ["abbreviation", "multi-evidence"]
+    },
+    {
+      "id": "v2-test-architect-hands-on-cloud-operations",
+      "profile_id": "test-solutions-architect",
+      "requirement": "Hands-on ownership of production cloud infrastructure and incident operations.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s5"],
+      "forbidden_claims": ["production cloud operations ownership"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-test-architect-azure-delivery",
+      "profile_id": "test-solutions-architect",
+      "requirement": "Delivery of production Azure architecture projects for enterprise customers.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["production Azure project experience"],
+      "tags": ["certification-only", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-test-architect-customer-discovery",
+      "profile_id": "test-solutions-architect",
+      "requirement": "Executive stakeholder discovery and communication of technical trade-offs.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s3", "resume-s7"],
+      "forbidden_claims": ["contract negotiation ownership"],
+      "tags": ["semantic-paraphrase", "multi-evidence"]
+    },
+    {
+      "id": "v2-test-graduate-production-backend",
+      "profile_id": "test-graduate-engineer",
+      "requirement": "Professional production backend engineering with Python and PostgreSQL.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s3"],
+      "forbidden_claims": ["professional backend engineering experience", "production support experience"],
+      "tags": ["academic-vs-professional", "scope-mismatch"]
+    },
+    {
+      "id": "v2-test-graduate-aws-production",
+      "profile_id": "test-graduate-engineer",
+      "requirement": "Hands-on operation of production workloads on AWS.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["AWS production experience"],
+      "tags": ["tutorial-only", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-test-graduate-ml-foundations",
+      "profile_id": "test-graduate-engineer",
+      "requirement": "Knowledge of training and evaluating machine learning classification models.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s4"],
+      "forbidden_claims": ["production machine learning experience"],
+      "tags": ["semantic-paraphrase", "academic-evidence"]
+    },
+    {
+      "id": "v2-test-graduate-people-leadership",
+      "profile_id": "test-graduate-engineer",
+      "requirement": "Formal people leadership and engineering team management experience.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["people management experience", "engineering leadership experience"],
+      "tags": ["academic-teamwork", "hard-negative", "no-evidence"]
     }
   ]
 }
