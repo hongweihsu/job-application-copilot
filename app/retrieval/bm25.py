@@ -4,7 +4,7 @@ from collections import Counter
 
 from app.retrieval.models import RetrievedEvidence
 
-TOKEN_PATTERN = re.compile(r"[a-z0-9]+(?:[./+#-][a-z0-9]+)*")
+TOKEN_PATTERN = re.compile(r"c\+\+|c#|[a-z0-9]+(?:[./+#-][a-z0-9]+)*")
 
 
 def _tokenize(text: str) -> list[str]:
