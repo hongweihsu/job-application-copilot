@@ -1,0 +1,1149 @@
+{
+  "dataset": "golden_dataset.json",
+  "dataset_cases": 32,
+  "top_k": 5,
+  "methods": {
+    "deterministic": {
+      "splits": {
+        "dev": {
+          "cases": 12,
+          "metrics": {
+            "answerable_cases": 8,
+            "recall_at_1": 0.875,
+            "precision_at_1": 0.875,
+            "hit_rate_at_1": 0.875,
+            "recall_at_3": 0.875,
+            "precision_at_3": 0.875,
+            "hit_rate_at_3": 0.875,
+            "recall_at_5": 0.875,
+            "precision_at_5": 0.875,
+            "hit_rate_at_5": 0.875,
+            "mrr": 0.875
+          },
+          "case_results": [
+            {
+              "case_id": "dev-python-api-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-postgres-sql-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-aws-kubernetes-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-stakeholder-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-react-typescript-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-docker-kubernetes-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-machine-learning-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-ci-cd-github-actions-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-leadership-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-gcp-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-nextjs-react-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-azure-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            }
+          ]
+        },
+        "validation": {
+          "cases": 10,
+          "metrics": {
+            "answerable_cases": 7,
+            "recall_at_1": 0.5714285714285714,
+            "precision_at_1": 0.7142857142857143,
+            "hit_rate_at_1": 0.7142857142857143,
+            "recall_at_3": 0.5714285714285714,
+            "precision_at_3": 0.7142857142857143,
+            "hit_rate_at_3": 0.7142857142857143,
+            "recall_at_5": 0.5714285714285714,
+            "precision_at_5": 0.7142857142857143,
+            "hit_rate_at_5": 0.7142857142857143,
+            "mrr": 0.7142857142857143
+          },
+          "case_results": [
+            {
+              "case_id": "validation-restful-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-amazon-web-services-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-teamwork-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-rag-supported",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-node-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-git-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-react-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-agile-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            }
+          ]
+        },
+        "test": {
+          "cases": 10,
+          "metrics": {
+            "answerable_cases": 7,
+            "recall_at_1": 0.7142857142857143,
+            "precision_at_1": 0.7142857142857143,
+            "hit_rate_at_1": 0.7142857142857143,
+            "recall_at_3": 0.7142857142857143,
+            "precision_at_3": 0.7142857142857143,
+            "hit_rate_at_3": 0.7142857142857143,
+            "recall_at_5": 0.7142857142857143,
+            "precision_at_5": 0.7142857142857143,
+            "hit_rate_at_5": 0.7142857142857143,
+            "mrr": 0.7142857142857143
+          },
+          "case_results": [
+            {
+              "case_id": "test-fastapi-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-structured-stakeholder-synonym-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-kubernetes-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-sql-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-docker-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-javascript-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-azure-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-rag-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-leadership-semantic-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            }
+          ]
+        },
+        "all": {
+          "cases": 32,
+          "metrics": {
+            "answerable_cases": 22,
+            "recall_at_1": 0.7272727272727273,
+            "precision_at_1": 0.7727272727272727,
+            "hit_rate_at_1": 0.7727272727272727,
+            "recall_at_3": 0.7272727272727273,
+            "precision_at_3": 0.7727272727272727,
+            "hit_rate_at_3": 0.7727272727272727,
+            "recall_at_5": 0.7272727272727273,
+            "precision_at_5": 0.7727272727272727,
+            "hit_rate_at_5": 0.7727272727272727,
+            "mrr": 0.7727272727272727
+          },
+          "case_results": [
+            {
+              "case_id": "dev-python-api-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-postgres-sql-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-aws-kubernetes-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-stakeholder-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-react-typescript-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-docker-kubernetes-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-machine-learning-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-ci-cd-github-actions-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-leadership-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-gcp-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-nextjs-react-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-azure-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-restful-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-amazon-web-services-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-teamwork-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-rag-supported",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-node-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-git-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-react-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-agile-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-fastapi-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-structured-stakeholder-synonym-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-kubernetes-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-sql-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-docker-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-javascript-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-azure-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-rag-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-leadership-semantic-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            }
+          ]
+        }
+      }
+    },
+    "bm25": {
+      "configuration": {
+        "k1": 1.5,
+        "b": 0.75
+      },
+      "splits": {
+        "dev": {
+          "cases": 12,
+          "metrics": {
+            "answerable_cases": 8,
+            "recall_at_1": 0.625,
+            "precision_at_1": 0.625,
+            "hit_rate_at_1": 0.625,
+            "recall_at_3": 0.75,
+            "precision_at_3": 0.5625,
+            "hit_rate_at_3": 0.75,
+            "recall_at_5": 0.75,
+            "precision_at_5": 0.5625,
+            "hit_rate_at_5": 0.75,
+            "mrr": 0.6875
+          },
+          "case_results": [
+            {
+              "case_id": "dev-python-api-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-postgres-sql-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-aws-kubernetes-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-stakeholder-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-react-typescript-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-docker-kubernetes-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-machine-learning-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-ci-cd-github-actions-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-leadership-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-gcp-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-nextjs-react-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2",
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-azure-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            }
+          ]
+        },
+        "validation": {
+          "cases": 10,
+          "metrics": {
+            "answerable_cases": 7,
+            "recall_at_1": 0.42857142857142855,
+            "precision_at_1": 0.5714285714285714,
+            "hit_rate_at_1": 0.5714285714285714,
+            "recall_at_3": 0.5714285714285714,
+            "precision_at_3": 0.6428571428571429,
+            "hit_rate_at_3": 0.7142857142857143,
+            "recall_at_5": 0.5714285714285714,
+            "precision_at_5": 0.6428571428571429,
+            "hit_rate_at_5": 0.7142857142857143,
+            "mrr": 0.6428571428571429
+          },
+          "case_results": [
+            {
+              "case_id": "validation-restful-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2",
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-amazon-web-services-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "validation-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-teamwork-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-rag-supported",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-node-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-git-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-react-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-agile-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            }
+          ]
+        },
+        "test": {
+          "cases": 10,
+          "metrics": {
+            "answerable_cases": 7,
+            "recall_at_1": 0.8571428571428571,
+            "precision_at_1": 0.8571428571428571,
+            "hit_rate_at_1": 0.8571428571428571,
+            "recall_at_3": 0.8571428571428571,
+            "precision_at_3": 0.7857142857142857,
+            "hit_rate_at_3": 0.8571428571428571,
+            "recall_at_5": 0.8571428571428571,
+            "precision_at_5": 0.7857142857142857,
+            "hit_rate_at_5": 0.8571428571428571,
+            "mrr": 0.8571428571428571
+          },
+          "case_results": [
+            {
+              "case_id": "test-fastapi-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-structured-stakeholder-synonym-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-kubernetes-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-sql-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-docker-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-javascript-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-azure-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "test-rag-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-leadership-semantic-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            }
+          ]
+        },
+        "all": {
+          "cases": 32,
+          "metrics": {
+            "answerable_cases": 22,
+            "recall_at_1": 0.6363636363636364,
+            "precision_at_1": 0.6818181818181818,
+            "hit_rate_at_1": 0.6818181818181818,
+            "recall_at_3": 0.7272727272727273,
+            "precision_at_3": 0.6590909090909091,
+            "hit_rate_at_3": 0.7727272727272727,
+            "recall_at_5": 0.7272727272727273,
+            "precision_at_5": 0.6590909090909091,
+            "hit_rate_at_5": 0.7727272727272727,
+            "mrr": 0.7272727272727273
+          },
+          "case_results": [
+            {
+              "case_id": "dev-python-api-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-postgres-sql-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-aws-kubernetes-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-stakeholder-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-react-typescript-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-docker-kubernetes-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-machine-learning-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-ci-cd-github-actions-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-leadership-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "dev-gcp-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "dev-nextjs-react-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2",
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "dev-azure-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-restful-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2",
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-amazon-web-services-synonym-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "validation-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-teamwork-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-communication-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-rag-supported",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-node-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-git-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "validation-react-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "validation-agile-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": [
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "test-fastapi-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-structured-stakeholder-synonym-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-kubernetes-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-sql-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-docker-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-javascript-typescript-partial",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1"
+              ]
+            },
+            {
+              "case_id": "test-python-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-azure-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": [
+                "resume-s1",
+                "resume-s2"
+              ]
+            },
+            {
+              "case_id": "test-rag-missing",
+              "expected_evidence_ids": [],
+              "retrieved_evidence_ids": []
+            },
+            {
+              "case_id": "test-leadership-semantic-supported",
+              "expected_evidence_ids": [
+                "resume-s1"
+              ],
+              "retrieved_evidence_ids": []
+            }
+          ]
+        }
+      }
+    }
+  }
+}
