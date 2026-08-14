@@ -1,0 +1,278 @@
+{
+  "version": "2.0",
+  "description": "Resume-level retrieval benchmark with realistic profiles, hard negatives, synonyms, negation, and multi-evidence requirements.",
+  "profiles": [
+    {
+      "id": "dev-backend-engineer",
+      "split": "dev",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Backend engineer with four years of experience building services for insurance and payments products."},
+        {"id": "resume-s2", "text": "Designed Python and FastAPI services that processed 1.8 million policy events per month."},
+        {"id": "resume-s3", "text": "Reduced REST endpoint p95 latency by 34% through query optimization and response caching."},
+        {"id": "resume-s4", "text": "Deployed containerized workloads to Amazon ECS using infrastructure maintained by the platform team."},
+        {"id": "resume-s5", "text": "Created CloudWatch dashboards and alarms for payment failures and queue backlogs."},
+        {"id": "resume-s6", "text": "Used Docker Compose for local development but have not operated Kubernetes clusters."},
+        {"id": "resume-s7", "text": "Clarified delivery priorities with product managers, claims specialists, and compliance analysts."},
+        {"id": "resume-s8", "text": "Implemented PostgreSQL migrations and SQL reconciliation jobs for financial reporting."},
+        {"id": "resume-s9", "text": "Added GitHub Actions checks for unit tests, Ruff, and container builds."},
+        {"id": "resume-s10", "text": "Mentored one graduate engineer through code reviews and weekly pairing sessions."},
+        {"id": "resume-s11", "text": "Built an internal React dashboard for support teams to inspect failed transactions."},
+        {"id": "resume-s12", "text": "Documented incident recovery steps, although production incidents were led by the on-call platform engineer."}
+      ]
+    },
+    {
+      "id": "dev-frontend-engineer",
+      "split": "dev",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Frontend engineer focused on customer-facing travel and booking experiences."},
+        {"id": "resume-s2", "text": "Developed React applications in TypeScript used by more than 80,000 monthly customers."},
+        {"id": "resume-s3", "text": "Built reusable form, modal, and navigation components documented in Storybook."},
+        {"id": "resume-s4", "text": "Improved keyboard navigation and screen-reader labels to meet WCAG 2.1 AA requirements."},
+        {"id": "resume-s5", "text": "Reduced the checkout JavaScript bundle by 28% using route-level code splitting."},
+        {"id": "resume-s6", "text": "Maintained a small Node.js service that aggregated availability data from internal APIs."},
+        {"id": "resume-s7", "text": "Worked with UX designers and researchers to test prototypes with customers."},
+        {"id": "resume-s8", "text": "Wrote Jest and React Testing Library tests for booking and cancellation flows."},
+        {"id": "resume-s9", "text": "Reviewed a Next.js proof of concept but did not build or ship a Next.js application."},
+        {"id": "resume-s10", "text": "Used GitHub Actions to run tests and publish preview builds for pull requests."},
+        {"id": "resume-s11", "text": "Partnered with backend engineers on REST API contracts and error handling."},
+        {"id": "resume-s12", "text": "Presented quarterly accessibility findings to product and engineering leadership."}
+      ]
+    },
+    {
+      "id": "dev-data-analyst",
+      "split": "dev",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Data analyst supporting finance, operations, and customer success teams."},
+        {"id": "resume-s2", "text": "Built PostgreSQL reporting views and complex SQL queries for monthly revenue reconciliation."},
+        {"id": "resume-s3", "text": "Created Power BI dashboards that reduced manual operational reporting by twelve hours per week."},
+        {"id": "resume-s4", "text": "Automated spreadsheet validation and CSV ingestion with Python and pandas."},
+        {"id": "resume-s5", "text": "Presented churn findings to account managers and translated questions into measurable metrics."},
+        {"id": "resume-s6", "text": "Maintained data quality checks and investigated unexpected changes in source-system records."},
+        {"id": "resume-s7", "text": "Completed an introductory machine learning course and reproduced a tutorial notebook."},
+        {"id": "resume-s8", "text": "Have not trained, deployed, or monitored a machine learning model in production."},
+        {"id": "resume-s9", "text": "Scheduled transformations in Azure Data Factory using pipelines owned by the data engineering team."},
+        {"id": "resume-s10", "text": "Documented metric definitions and data lineage in the internal analytics catalogue."},
+        {"id": "resume-s11", "text": "Facilitated requirements workshops with finance controllers and regional operations managers."},
+        {"id": "resume-s12", "text": "Used Git for version control and participated in peer review of analytics code."}
+      ]
+    },
+    {
+      "id": "validation-platform-engineer",
+      "split": "validation",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Platform engineer responsible for deployment tooling used by fourteen product teams."},
+        {"id": "resume-s2", "text": "Administered production Kubernetes clusters and created Helm charts for shared services."},
+        {"id": "resume-s3", "text": "Implemented continuous delivery pipelines in GitHub Actions with staged rollouts and rollback checks."},
+        {"id": "resume-s4", "text": "Built Prometheus alerts and Grafana dashboards for latency, saturation, and error budgets."},
+        {"id": "resume-s5", "text": "Led incident reviews and converted recurring failure modes into runbook automation."},
+        {"id": "resume-s6", "text": "Supported workloads running on Amazon EKS but cloud accounts and networking were managed centrally."},
+        {"id": "resume-s7", "text": "Provisioned development environments with Terraform modules maintained by the infrastructure group."},
+        {"id": "resume-s8", "text": "Coached three application teams on readiness probes, resource limits, and safe deployments."},
+        {"id": "resume-s9", "text": "Created Python command-line tools for release diagnostics and configuration validation."},
+        {"id": "resume-s10", "text": "Participated in an Azure migration assessment but did not deploy workloads to Azure."},
+        {"id": "resume-s11", "text": "Maintained service-level objectives and reported reliability risks to engineering managers."},
+        {"id": "resume-s12", "text": "Used Docker to package internal platform components and test them locally."}
+      ]
+    },
+    {
+      "id": "test-product-engineer",
+      "split": "test",
+      "resume_evidence": [
+        {"id": "resume-s1", "text": "Product engineer working across web applications and internal customer-support tools."},
+        {"id": "resume-s2", "text": "Created HTTP services with Django REST Framework for subscription and account workflows."},
+        {"id": "resume-s3", "text": "Deployed services to Google Cloud Run and configured Cloud Monitoring alerts."},
+        {"id": "resume-s4", "text": "Built React and JavaScript interfaces for customer onboarding and plan changes."},
+        {"id": "resume-s5", "text": "Interviewed support agents and converted recurring issues into a prioritized delivery roadmap."},
+        {"id": "resume-s6", "text": "Presented technical trade-offs to product managers and customer operations leaders."},
+        {"id": "resume-s7", "text": "Implemented PostgreSQL schema changes and SQL queries for subscription reporting."},
+        {"id": "resume-s8", "text": "Used Docker for local development and automated tests in GitLab CI."},
+        {"id": "resume-s9", "text": "Contributed code reviews but have not formally managed or led an engineering team."},
+        {"id": "resume-s10", "text": "Completed AWS Cloud Practitioner training without using AWS in a production role."},
+        {"id": "resume-s11", "text": "Added structured JSON validation for inbound webhook events using Pydantic."},
+        {"id": "resume-s12", "text": "Reduced failed onboarding submissions by 21% after analyzing validation errors."}
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "v2-dev-backend-python-api",
+      "profile_id": "dev-backend-engineer",
+      "requirement": "Required: production experience building scalable Python REST API services.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s3"],
+      "forbidden_claims": ["Django experience", "GraphQL experience"],
+      "tags": ["exact-match", "multi-evidence"]
+    },
+    {
+      "id": "v2-dev-backend-aws-observability",
+      "profile_id": "dev-backend-engineer",
+      "requirement": "Hands-on Amazon Web Services deployment and cloud monitoring experience is required.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s4", "resume-s5"],
+      "forbidden_claims": ["AWS networking ownership", "Terraform experience"],
+      "tags": ["abbreviation", "multi-evidence"]
+    },
+    {
+      "id": "v2-dev-backend-kubernetes",
+      "profile_id": "dev-backend-engineer",
+      "requirement": "Must have production Kubernetes administration experience.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["Kubernetes administration experience"],
+      "tags": ["negation", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-backend-stakeholder-communication",
+      "profile_id": "dev-backend-engineer",
+      "requirement": "Strong stakeholder communication and requirements clarification skills.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s7"],
+      "forbidden_claims": ["executive board presentations"],
+      "tags": ["semantic-paraphrase"]
+    },
+    {
+      "id": "v2-dev-frontend-react-typescript",
+      "profile_id": "dev-frontend-engineer",
+      "requirement": "Professional React and TypeScript development experience is essential.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2"],
+      "forbidden_claims": ["React Native experience"],
+      "tags": ["exact-match"]
+    },
+    {
+      "id": "v2-dev-frontend-nextjs",
+      "profile_id": "dev-frontend-engineer",
+      "requirement": "Commercial experience shipping production applications with Next.js.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["production Next.js experience"],
+      "tags": ["negation", "hard-negative", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-frontend-accessibility",
+      "profile_id": "dev-frontend-engineer",
+      "requirement": "Demonstrated web accessibility and WCAG implementation experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s4", "resume-s12"],
+      "forbidden_claims": ["accessibility certification"],
+      "tags": ["multi-evidence"]
+    },
+    {
+      "id": "v2-dev-frontend-backend-node",
+      "profile_id": "dev-frontend-engineer",
+      "requirement": "Deep backend Node.js architecture and production operations experience.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s6"],
+      "forbidden_claims": ["large-scale Node.js platform ownership"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-dev-data-sql-postgresql",
+      "profile_id": "dev-data-analyst",
+      "requirement": "Advanced SQL and PostgreSQL reporting experience is required.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2"],
+      "forbidden_claims": ["PostgreSQL database administration"],
+      "tags": ["exact-match"]
+    },
+    {
+      "id": "v2-dev-data-machine-learning",
+      "profile_id": "dev-data-analyst",
+      "requirement": "Production machine learning model training and deployment experience.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["production machine learning experience"],
+      "tags": ["training-only", "negation", "no-evidence"]
+    },
+    {
+      "id": "v2-dev-data-business-partnering",
+      "profile_id": "dev-data-analyst",
+      "requirement": "Ability to communicate insights and gather requirements from business partners.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s5", "resume-s11"],
+      "forbidden_claims": ["executive advisory experience"],
+      "tags": ["semantic-paraphrase", "multi-evidence"]
+    },
+    {
+      "id": "v2-dev-data-azure-cloud-engineering",
+      "profile_id": "dev-data-analyst",
+      "requirement": "Ownership of Azure cloud infrastructure and production platform operations.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s9"],
+      "forbidden_claims": ["Azure infrastructure ownership"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-validation-platform-kubernetes-delivery",
+      "profile_id": "validation-platform-engineer",
+      "requirement": "Production Kubernetes operations and continuous delivery experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2", "resume-s3"],
+      "forbidden_claims": ["Argo CD experience"],
+      "tags": ["multi-evidence", "lexical-variation"]
+    },
+    {
+      "id": "v2-validation-platform-observability",
+      "profile_id": "validation-platform-engineer",
+      "requirement": "Experience defining SLOs and implementing production observability.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s4", "resume-s11"],
+      "forbidden_claims": ["Datadog experience"],
+      "tags": ["abbreviation", "multi-evidence"]
+    },
+    {
+      "id": "v2-validation-platform-aws-ownership",
+      "profile_id": "validation-platform-engineer",
+      "requirement": "End-to-end ownership of AWS accounts, networking, and cloud security.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s6"],
+      "forbidden_claims": ["AWS account ownership", "AWS networking ownership"],
+      "tags": ["scope-mismatch", "hard-negative"]
+    },
+    {
+      "id": "v2-validation-platform-people-leadership",
+      "profile_id": "validation-platform-engineer",
+      "requirement": "People leadership experience managing and developing engineers.",
+      "expected_status": "partial",
+      "expected_evidence_ids": ["resume-s8"],
+      "forbidden_claims": ["formal line management experience"],
+      "tags": ["semantic-paraphrase", "scope-mismatch"]
+    },
+    {
+      "id": "v2-test-product-rest-api",
+      "profile_id": "test-product-engineer",
+      "requirement": "Experience designing RESTful APIs for customer-facing products.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s2"],
+      "forbidden_claims": ["FastAPI experience"],
+      "tags": ["framework-paraphrase", "semantic-paraphrase"]
+    },
+    {
+      "id": "v2-test-product-gcp-operations",
+      "profile_id": "test-product-engineer",
+      "requirement": "Public cloud deployment and service monitoring experience.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s3"],
+      "forbidden_claims": ["AWS production experience", "Azure production experience"],
+      "tags": ["semantic-paraphrase", "multi-concept"]
+    },
+    {
+      "id": "v2-test-product-stakeholder-discovery",
+      "profile_id": "test-product-engineer",
+      "requirement": "Skilled at stakeholder discovery, prioritisation, and communicating technical trade-offs.",
+      "expected_status": "supported",
+      "expected_evidence_ids": ["resume-s5", "resume-s6"],
+      "forbidden_claims": ["executive stakeholder management"],
+      "tags": ["semantic-paraphrase", "multi-evidence"]
+    },
+    {
+      "id": "v2-test-product-engineering-management",
+      "profile_id": "test-product-engineer",
+      "requirement": "At least two years of formal engineering management and team leadership.",
+      "expected_status": "missing",
+      "expected_evidence_ids": [],
+      "forbidden_claims": ["engineering management experience", "team leadership experience"],
+      "tags": ["negation", "hard-negative", "no-evidence"]
+    }
+  ]
+}
