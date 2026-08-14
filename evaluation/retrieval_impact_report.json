@@ -1,0 +1,284 @@
+{
+  "dataset": "golden_dataset.json",
+  "dataset_cases": 32,
+  "model": "gpt-5-mini",
+  "encoding": "o200k_base",
+  "top_k": 5,
+  "token_estimate_scope": "System and user prompt text only; API message framing and output tokens excluded.",
+  "retrieval": {
+    "deterministic_recall_at_5": 0.7272727272727273,
+    "bm25_recall_at_5": 0.7272727272727273,
+    "recall_at_5_delta": 0.0
+  },
+  "tokens": {
+    "full_context": {
+      "evidence_units": 64,
+      "prompt_tokens": 5138
+    },
+    "bm25_top_k": {
+      "evidence_units": 26,
+      "prompt_tokens": 4637
+    },
+    "evidence_unit_reduction": 0.59375,
+    "prompt_token_reduction": 0.09750875827170102,
+    "prompt_tokens_saved": 501
+  },
+  "case_results": [
+    {
+      "case_id": "dev-python-api-supported",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 166,
+      "retrieved_prompt_tokens": 153
+    },
+    {
+      "case_id": "dev-postgres-sql-supported",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 2,
+      "full_prompt_tokens": 163,
+      "retrieved_prompt_tokens": 163
+    },
+    {
+      "case_id": "dev-aws-kubernetes-missing",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 160,
+      "retrieved_prompt_tokens": 146
+    },
+    {
+      "case_id": "dev-stakeholder-communication-partial",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 159,
+      "retrieved_prompt_tokens": 131
+    },
+    {
+      "case_id": "dev-react-typescript-supported",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 164,
+      "retrieved_prompt_tokens": 151
+    },
+    {
+      "case_id": "dev-docker-kubernetes-partial",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 164,
+      "retrieved_prompt_tokens": 149
+    },
+    {
+      "case_id": "dev-machine-learning-missing",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 156,
+      "retrieved_prompt_tokens": 133
+    },
+    {
+      "case_id": "dev-ci-cd-github-actions-supported",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 2,
+      "full_prompt_tokens": 168,
+      "retrieved_prompt_tokens": 168
+    },
+    {
+      "case_id": "dev-leadership-partial",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 160,
+      "retrieved_prompt_tokens": 147
+    },
+    {
+      "case_id": "dev-gcp-missing",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 163,
+      "retrieved_prompt_tokens": 135
+    },
+    {
+      "case_id": "dev-nextjs-react-partial",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 2,
+      "full_prompt_tokens": 161,
+      "retrieved_prompt_tokens": 161
+    },
+    {
+      "case_id": "dev-azure-missing",
+      "split": "dev",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 155,
+      "retrieved_prompt_tokens": 130
+    },
+    {
+      "case_id": "validation-restful-synonym-supported",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 2,
+      "full_prompt_tokens": 160,
+      "retrieved_prompt_tokens": 160
+    },
+    {
+      "case_id": "validation-amazon-web-services-synonym-supported",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 163,
+      "retrieved_prompt_tokens": 145
+    },
+    {
+      "case_id": "validation-python-missing",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 158,
+      "retrieved_prompt_tokens": 131
+    },
+    {
+      "case_id": "validation-teamwork-supported",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 160,
+      "retrieved_prompt_tokens": 149
+    },
+    {
+      "case_id": "validation-communication-partial",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 160,
+      "retrieved_prompt_tokens": 133
+    },
+    {
+      "case_id": "validation-rag-supported",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 163,
+      "retrieved_prompt_tokens": 151
+    },
+    {
+      "case_id": "validation-node-typescript-partial",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 162,
+      "retrieved_prompt_tokens": 148
+    },
+    {
+      "case_id": "validation-git-supported",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 161,
+      "retrieved_prompt_tokens": 150
+    },
+    {
+      "case_id": "validation-react-missing",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 160,
+      "retrieved_prompt_tokens": 131
+    },
+    {
+      "case_id": "validation-agile-missing",
+      "split": "validation",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 158,
+      "retrieved_prompt_tokens": 146
+    },
+    {
+      "case_id": "test-fastapi-supported",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 159,
+      "retrieved_prompt_tokens": 146
+    },
+    {
+      "case_id": "test-structured-stakeholder-synonym-partial",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 162,
+      "retrieved_prompt_tokens": 150
+    },
+    {
+      "case_id": "test-kubernetes-supported",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 158,
+      "retrieved_prompt_tokens": 147
+    },
+    {
+      "case_id": "test-sql-partial",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 161,
+      "retrieved_prompt_tokens": 149
+    },
+    {
+      "case_id": "test-docker-missing",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 156,
+      "retrieved_prompt_tokens": 131
+    },
+    {
+      "case_id": "test-javascript-typescript-partial",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 1,
+      "full_prompt_tokens": 159,
+      "retrieved_prompt_tokens": 146
+    },
+    {
+      "case_id": "test-python-missing",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 157,
+      "retrieved_prompt_tokens": 131
+    },
+    {
+      "case_id": "test-azure-supported",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 2,
+      "full_prompt_tokens": 161,
+      "retrieved_prompt_tokens": 161
+    },
+    {
+      "case_id": "test-rag-missing",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 157,
+      "retrieved_prompt_tokens": 132
+    },
+    {
+      "case_id": "test-leadership-semantic-supported",
+      "split": "test",
+      "full_evidence_units": 2,
+      "retrieved_evidence_units": 0,
+      "full_prompt_tokens": 164,
+      "retrieved_prompt_tokens": 133
+    }
+  ]
+}
