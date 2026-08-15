@@ -5,6 +5,37 @@ from collections import Counter
 from app.retrieval.models import RetrievedEvidence
 
 TOKEN_PATTERN = re.compile(r"c\+\+|c#|[a-z0-9]+(?:[./+#-][a-z0-9]+)*")
+CONSERVATIVE_QUERY_STOPWORDS = frozenset(
+    {
+        "a",
+        "ability",
+        "an",
+        "and",
+        "are",
+        "at",
+        "commercial",
+        "demonstrated",
+        "essential",
+        "experience",
+        "for",
+        "hands-on",
+        "have",
+        "in",
+        "is",
+        "must",
+        "of",
+        "or",
+        "professional",
+        "recent",
+        "required",
+        "skills",
+        "strong",
+        "the",
+        "to",
+        "using",
+        "with",
+    }
+)
 
 
 def _tokenize(text: str) -> list[str]:
@@ -18,13 +49,19 @@ class BM25Retriever:
 
     method_name = "bm25"
 
-    def __init__(self, k1: float = 1.5, b: float = 0.75):
+    def __init__(
+        self,
+        k1: float = 1.5,
+        b: float = 0.75,
+        query_stopwords: frozenset[str] | None = None,
+    ):
         if k1 <= 0:
             raise ValueError("k1 must be greater than 0")
         if not 0 <= b <= 1:
             raise ValueError("b must be between 0 and 1")
         self.k1 = k1
         self.b = b
+        self.query_stopwords = query_stopwords or frozenset()
 
     def retrieve(
         self,
@@ -37,7 +74,7 @@ class BM25Retriever:
         if not evidence_units:
             return []
 
-        query_terms = set(_tokenize(query))
+        query_terms = set(_tokenize(query)) - self.query_stopwords
         if not query_terms:
             return []
 
@@ -93,3 +130,12 @@ class BM25Retriever:
             )
             for rank, (score, _, evidence_id, text) in enumerate(scored_documents[:top_k], start=1)
         ]
+
+
+class BM25StopwordRetriever(BM25Retriever):
+    """BM25 variant that removes conservative boilerplate terms from queries."""
+
+    method_name = "bm25_stopwords"
+
+    def __init__(self, k1: float = 1.5, b: float = 0.75):
+        super().__init__(k1=k1, b=b, query_stopwords=CONSERVATIVE_QUERY_STOPWORDS)

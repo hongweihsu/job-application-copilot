@@ -1,6 +1,6 @@
 import pytest
 
-from app.retrieval import BM25Retriever
+from app.retrieval import BM25Retriever, BM25StopwordRetriever
 
 
 def test_ranks_document_matching_more_query_terms_first():
@@ -101,3 +101,25 @@ def test_rejects_invalid_top_k():
 )
 def test_empty_search_inputs_return_no_results(query, evidence_units):
     assert BM25Retriever().retrieve(query, evidence_units, top_k=5) == []
+
+
+def test_stopword_variant_removes_query_boilerplate():
+    results = BM25StopwordRetriever().retrieve(
+        query="Professional Python experience is required",
+        evidence_units=[
+            ("resume-s1", "Built production Python APIs."),
+            ("resume-s2", "Professional experience supporting customers."),
+        ],
+        top_k=5,
+    )
+
+    assert [result.evidence_id for result in results] == ["resume-s1"]
+    assert results[0].retrieval_method == "bm25_stopwords"
+
+
+def test_stopword_variant_keeps_scope_bearing_terms():
+    retriever = BM25StopwordRetriever()
+
+    assert {"production", "ownership", "formal", "administration"}.isdisjoint(
+        retriever.query_stopwords
+    )
