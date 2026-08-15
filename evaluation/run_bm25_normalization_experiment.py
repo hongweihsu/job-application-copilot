@@ -1,26 +1,24 @@
 import argparse
 import json
-from pathlib import Path
 
 from app.retrieval import BM25NormalizedRetriever, BM25Retriever
 from app.retrieval.bm25 import WORD_NORMALIZATION_ALIASES
 from evaluation.run_bm25_stopword_experiment import _evaluate_method
 from evaluation.run_retrieval_evaluation_v2 import DATASET, _load_cases
 
-REPORT_JSON = Path(__file__).with_name("bm25_normalization_experiment_dev.json")
-REPORT_MARKDOWN = Path(__file__).with_name("bm25_normalization_experiment_dev.md")
 
-
-def evaluate_normalization_experiment(top_k: int = 5) -> dict:
+def evaluate_normalization_experiment(top_k: int = 5, split: str = "dev") -> dict:
     if top_k < 5:
         raise ValueError("top_k must be at least 5 to calculate Recall@5")
+    if split not in {"dev", "validation"}:
+        raise ValueError("normalization experiments are limited to dev and validation")
 
-    cases = _load_cases("dev")
+    cases = _load_cases(split)
     raw = BM25Retriever()
     normalized = BM25NormalizedRetriever()
     report = {
         "dataset": DATASET.name,
-        "evaluated_split": "dev",
+        "evaluated_split": split,
         "cases": len(cases),
         "profiles": len({case["profile_id"] for case in cases}),
         "top_k": top_k,
@@ -49,12 +47,17 @@ def evaluate_normalization_experiment(top_k: int = 5) -> dict:
         "recall_gate_passed": recall_passed,
         "ranking_improved": ranking_improved,
         "precision_improved": precision_improved,
-        "status": (
-            "candidate_for_validation"
-            if recall_passed and (ranking_improved or precision_improved)
-            else "rejected_as_standalone"
-        ),
+        "status": "pending",
     }
+    passed = recall_passed and (ranking_improved or precision_improved)
+    if split == "dev":
+        report["decision"]["status"] = (
+            "candidate_for_validation" if passed else "rejected_as_standalone"
+        )
+    else:
+        report["decision"]["status"] = (
+            "approved_for_promotion" if passed else "rejected_after_validation"
+        )
     return report
 
 
@@ -67,7 +70,8 @@ def markdown_report(report: dict) -> str:
         "# BM25 Word Normalization Experiment",
         "",
         f"Dataset: `{report['dataset']}`",
-        f"Evaluated split: `dev` ({report['profiles']} profiles, {report['cases']} cases)",
+        f"Evaluated split: `{report['evaluated_split']}` "
+        f"({report['profiles']} profiles, {report['cases']} cases)",
         "",
         "This experiment normalizes a pre-registered set of common word forms in both queries and "
         "resume evidence. It does not use stopwords, aliases for domain concepts, or embeddings.",
@@ -97,6 +101,20 @@ def markdown_report(report: dict) -> str:
         normalized["average_candidates_retrieved"] - raw["average_candidates_retrieved"]
     )
     decision = report["decision"]["status"].replace("_", " ")
+    if report["evaluated_split"] == "dev":
+        observations = (
+            "Observed dev gains include AWS observability moving from first relevant rank 2 to "
+            "rank 1, complete retrieval of both incident-detection evidence units, mobile "
+            "monitoring moving from rank 3 to rank 1, and an additional MLOps training evidence "
+            "unit entering Top-5."
+        )
+        boundary = "Validation and test were not evaluated."
+    else:
+        observations = (
+            "The normalization mapping was frozen after dev evaluation; no aliases were added or "
+            "removed based on validation cases."
+        )
+        boundary = "Test was not evaluated."
     lines.extend(
         [
             "",
@@ -114,12 +132,9 @@ def markdown_report(report: dict) -> str:
             "The decision requires Recall@5 to remain at least equal to raw BM25 and either MRR "
             "or Precision@5 to improve.",
             "",
-            "Observed dev gains include AWS observability moving from first relevant rank 2 to "
-            "rank 1, complete retrieval of both incident-detection evidence units, mobile "
-            "monitoring moving from rank 3 to rank 1, and an additional MLOps training evidence "
-            "unit entering Top-5.",
+            observations,
             "",
-            "Validation and test were not evaluated.",
+            boundary,
             "",
         ]
     )
@@ -128,16 +143,19 @@ def markdown_report(report: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--split", choices=("dev", "validation"), default="dev")
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--write-report", action="store_true")
     args = parser.parse_args()
 
-    report = evaluate_normalization_experiment(top_k=args.top_k)
+    report = evaluate_normalization_experiment(top_k=args.top_k, split=args.split)
     print(markdown_report(report))
     if args.write_report:
-        REPORT_JSON.write_text(json.dumps(report, indent=2) + "\n")
-        REPORT_MARKDOWN.write_text(markdown_report(report))
-        print(f"Wrote {REPORT_JSON} and {REPORT_MARKDOWN}")
+        report_json = DATASET.with_name(f"bm25_normalization_experiment_{args.split}.json")
+        report_markdown = DATASET.with_name(f"bm25_normalization_experiment_{args.split}.md")
+        report_json.write_text(json.dumps(report, indent=2) + "\n")
+        report_markdown.write_text(markdown_report(report))
+        print(f"Wrote {report_json} and {report_markdown}")
 
 
 if __name__ == "__main__":

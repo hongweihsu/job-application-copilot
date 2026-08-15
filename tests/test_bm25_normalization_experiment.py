@@ -26,8 +26,31 @@ def test_normalization_experiment_has_pre_registered_decision_rule():
     )
 
 
+def test_normalization_experiment_can_validate_frozen_rules_without_test_data():
+    report = evaluate_normalization_experiment(split="validation")
+
+    assert report["evaluated_split"] == "validation"
+    assert report["profiles"] == 3
+    assert report["cases"] == 12
+    assert report["decision"]["status"] in {
+        "approved_for_promotion",
+        "rejected_after_validation",
+    }
+    for method in report["methods"].values():
+        assert all(
+            result["case_id"].startswith("v2-validation-") for result in method["case_results"]
+        )
+
+
 def test_normalization_experiment_markdown_preserves_split_boundary():
     output = markdown_report(evaluate_normalization_experiment())
 
     assert "BM25 Word Normalization Experiment" in output
     assert "Validation and test were not evaluated" in output
+
+
+def test_normalization_validation_markdown_keeps_test_unseen():
+    output = markdown_report(evaluate_normalization_experiment(split="validation"))
+
+    assert "Evaluated split: `validation`" in output
+    assert "Test was not evaluated" in output
