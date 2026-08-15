@@ -26,6 +26,9 @@ Retrieval development must use the dev split. Validation can be checked after a 
 stable. The test split should not be used to choose stopwords, aliases, stemming rules, embedding
 models, or fusion parameters.
 
+The raw BM25 failure analysis is documented in `bm25_error_analysis_dev.md`. It uses only the dev
+split and records the baseline that future retrieval changes must compare against.
+
 ## Schema
 
 `profiles` store resume evidence once. `cases` reference a `profile_id`, which avoids duplicating the
