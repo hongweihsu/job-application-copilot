@@ -36,6 +36,45 @@ CONSERVATIVE_QUERY_STOPWORDS = frozenset(
         "with",
     }
 )
+WORD_NORMALIZATION_ALIASES = {
+    "administered": "administer",
+    "administering": "administer",
+    "administration": "administer",
+    "applications": "application",
+    "built": "build",
+    "building": "build",
+    "builds": "build",
+    "communicated": "communicate",
+    "communicating": "communicate",
+    "communication": "communicate",
+    "deployed": "deploy",
+    "deploying": "deploy",
+    "deployment": "deploy",
+    "deployments": "deploy",
+    "engineers": "engineer",
+    "engineering": "engineer",
+    "incidents": "incident",
+    "managed": "manage",
+    "management": "manage",
+    "managing": "manage",
+    "models": "model",
+    "monitored": "monitor",
+    "monitoring": "monitor",
+    "monitors": "monitor",
+    "operations": "operate",
+    "operated": "operate",
+    "operating": "operate",
+    "optimized": "optimize",
+    "optimizing": "optimize",
+    "optimization": "optimize",
+    "pipelines": "pipeline",
+    "requirements": "requirement",
+    "services": "service",
+    "trained": "train",
+    "training": "train",
+    "trains": "train",
+    "workloads": "workload",
+}
 
 
 def _tokenize(text: str) -> list[str]:
@@ -63,6 +102,9 @@ class BM25Retriever:
         self.b = b
         self.query_stopwords = query_stopwords or frozenset()
 
+    def _tokens(self, text: str) -> list[str]:
+        return _tokenize(text)
+
     def retrieve(
         self,
         query: str,
@@ -74,11 +116,11 @@ class BM25Retriever:
         if not evidence_units:
             return []
 
-        query_terms = set(_tokenize(query)) - self.query_stopwords
+        query_terms = set(self._tokens(query)) - self.query_stopwords
         if not query_terms:
             return []
 
-        tokenized_documents = [_tokenize(text) for _, text in evidence_units]
+        tokenized_documents = [self._tokens(text) for _, text in evidence_units]
         average_document_length = sum(map(len, tokenized_documents)) / len(tokenized_documents)
         if average_document_length == 0:
             return []
@@ -139,3 +181,12 @@ class BM25StopwordRetriever(BM25Retriever):
 
     def __init__(self, k1: float = 1.5, b: float = 0.75):
         super().__init__(k1=k1, b=b, query_stopwords=CONSERVATIVE_QUERY_STOPWORDS)
+
+
+class BM25NormalizedRetriever(BM25Retriever):
+    """BM25 variant with transparent, conservative word-form normalization."""
+
+    method_name = "bm25_normalized"
+
+    def _tokens(self, text: str) -> list[str]:
+        return [WORD_NORMALIZATION_ALIASES.get(token, token) for token in _tokenize(text)]

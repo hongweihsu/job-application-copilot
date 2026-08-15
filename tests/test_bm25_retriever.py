@@ -1,6 +1,6 @@
 import pytest
 
-from app.retrieval import BM25Retriever, BM25StopwordRetriever
+from app.retrieval import BM25NormalizedRetriever, BM25Retriever, BM25StopwordRetriever
 
 
 def test_ranks_document_matching_more_query_terms_first():
@@ -123,3 +123,27 @@ def test_stopword_variant_keeps_scope_bearing_terms():
     assert {"production", "ownership", "formal", "administration"}.isdisjoint(
         retriever.query_stopwords
     )
+
+
+def test_normalized_variant_matches_common_word_forms():
+    results = BM25NormalizedRetriever().retrieve(
+        query="deployment monitoring incidents",
+        evidence_units=[
+            ("resume-s1", "Deployed services and monitored production incident alerts."),
+            ("resume-s2", "Created React user interfaces."),
+        ],
+        top_k=5,
+    )
+
+    assert [result.evidence_id for result in results] == ["resume-s1"]
+    assert results[0].retrieval_method == "bm25_normalized"
+
+
+def test_normalized_variant_preserves_technical_tokens():
+    results = BM25NormalizedRetriever().retrieve(
+        query="C++ Node.js CI/CD",
+        evidence_units=[("resume-s1", "Built C++ services with Node.js and CI/CD tooling.")],
+        top_k=5,
+    )
+
+    assert [result.evidence_id for result in results] == ["resume-s1"]
