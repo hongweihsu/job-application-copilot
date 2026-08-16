@@ -1,0 +1,499 @@
+{
+  "dataset": "golden_dataset_v2.json",
+  "evaluated_split": "validation",
+  "cases": 12,
+  "profiles": 3,
+  "top_k": 5,
+  "methods": {
+    "bm25_raw": {
+      "configuration": {
+        "k1": 1.5,
+        "b": 0.75
+      },
+      "metrics": {
+        "answerable_cases": 10,
+        "recall_at_1": 0.45,
+        "precision_at_1": 0.6,
+        "hit_rate_at_1": 0.6,
+        "recall_at_3": 0.75,
+        "precision_at_3": 0.36666666666666664,
+        "hit_rate_at_3": 0.8,
+        "recall_at_5": 0.9,
+        "precision_at_5": 0.26,
+        "hit_rate_at_5": 0.9,
+        "mrr": 0.725,
+        "no_gold_cases": 2,
+        "no_gold_candidate_rate": 1.0,
+        "average_candidates_retrieved": 4.666666666666667
+      },
+      "case_results": [
+        {
+          "case_id": "v2-validation-platform-kubernetes-delivery",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "multi-evidence",
+            "lexical-variation"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s4",
+            "resume-s9",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-validation-platform-observability",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s11"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s4",
+            "resume-s9",
+            "resume-s11",
+            "resume-s5"
+          ]
+        },
+        {
+          "case_id": "v2-validation-platform-aws-ownership",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s4",
+            "resume-s9",
+            "resume-s11",
+            "resume-s2"
+          ]
+        },
+        {
+          "case_id": "v2-validation-platform-people-leadership",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "semantic-paraphrase",
+            "scope-mismatch"
+          ],
+          "expected_evidence_ids": [
+            "resume-s8"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s9",
+            "resume-s11",
+            "resume-s2",
+            "resume-s5"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-incident-response",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s8",
+            "resume-s7",
+            "resume-s6",
+            "resume-s5"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-gcp-infrastructure",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "abbreviation",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s3",
+            "resume-s5",
+            "resume-s4",
+            "resume-s7",
+            "resume-s9"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-aws-production",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "training-only",
+            "negation",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-people-management",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s4",
+            "resume-s7",
+            "resume-s9",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-web-automation",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "multi-evidence",
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s9",
+            "resume-s10",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-mobile-automation",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "manual-vs-automated",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s7",
+            "resume-s1",
+            "resume-s5",
+            "resume-s2",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-performance-testing",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s6",
+            "resume-s2",
+            "resume-s4",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-java-selenium",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s10",
+            "resume-s1",
+            "resume-s7",
+            "resume-s8",
+            "resume-s5"
+          ]
+        }
+      ]
+    },
+    "embedding": {
+      "configuration": {
+        "model": "text-embedding-3-small",
+        "similarity": "cosine"
+      },
+      "metrics": {
+        "answerable_cases": 10,
+        "recall_at_1": 0.45,
+        "precision_at_1": 0.6,
+        "hit_rate_at_1": 0.6,
+        "recall_at_3": 0.85,
+        "precision_at_3": 0.4,
+        "hit_rate_at_3": 0.9,
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.28,
+        "hit_rate_at_5": 1.0,
+        "mrr": 0.775,
+        "no_gold_cases": 2,
+        "no_gold_candidate_rate": 1.0,
+        "average_candidates_retrieved": 5.0
+      },
+      "case_results": [
+        {
+          "case_id": "v2-validation-platform-kubernetes-delivery",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "multi-evidence",
+            "lexical-variation"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s1",
+            "resume-s6",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-validation-platform-observability",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s11"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s4",
+            "resume-s5",
+            "resume-s11",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-validation-platform-aws-ownership",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s2",
+            "resume-s1",
+            "resume-s7",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-validation-platform-people-leadership",
+          "profile_id": "validation-platform-engineer",
+          "tags": [
+            "semantic-paraphrase",
+            "scope-mismatch"
+          ],
+          "expected_evidence_ids": [
+            "resume-s8"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s8",
+            "resume-s11",
+            "resume-s2",
+            "resume-s7"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-incident-response",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s9",
+            "resume-s7",
+            "resume-s1",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-gcp-infrastructure",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "abbreviation",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s3",
+            "resume-s10",
+            "resume-s8",
+            "resume-s6",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-aws-production",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "training-only",
+            "negation",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s3",
+            "resume-s1",
+            "resume-s9",
+            "resume-s2"
+          ]
+        },
+        {
+          "case_id": "v2-validation-sre-people-management",
+          "profile_id": "validation-site-reliability-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s1",
+            "resume-s7",
+            "resume-s9",
+            "resume-s2"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-web-automation",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "multi-evidence",
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s3",
+            "resume-s2",
+            "resume-s1",
+            "resume-s5",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-mobile-automation",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "manual-vs-automated",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s7",
+            "resume-s1",
+            "resume-s5",
+            "resume-s2",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-performance-testing",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s6",
+            "resume-s3",
+            "resume-s2",
+            "resume-s9"
+          ]
+        },
+        {
+          "case_id": "v2-validation-qa-java-selenium",
+          "profile_id": "validation-qa-automation-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s10",
+            "resume-s1",
+            "resume-s7",
+            "resume-s3",
+            "resume-s5"
+          ]
+        }
+      ]
+    }
+  },
+  "embedding_usage": {
+    "api_requests": 12,
+    "input_tokens": 562,
+    "cached_documents": 32
+  },
+  "decision": {
+    "minimum_recall_at_5": 0.9,
+    "recall_gate_passed": true,
+    "ranking_improved": true,
+    "precision_improved": true,
+    "status": "approved_for_promotion"
+  }
+}
