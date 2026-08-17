@@ -1,0 +1,1597 @@
+{
+  "dataset": "golden_dataset_v2.json",
+  "evaluated_split": "dev",
+  "cases": 28,
+  "profiles": 7,
+  "top_k": 5,
+  "methods": {
+    "bm25_raw": {
+      "configuration": {
+        "k1": 1.5,
+        "b": 0.75
+      },
+      "metrics": {
+        "answerable_cases": 21,
+        "recall_at_1": 0.40476190476190477,
+        "precision_at_1": 0.47619047619047616,
+        "hit_rate_at_1": 0.47619047619047616,
+        "recall_at_3": 0.7619047619047619,
+        "precision_at_3": 0.35714285714285715,
+        "hit_rate_at_3": 0.8571428571428571,
+        "recall_at_5": 0.8492063492063492,
+        "precision_at_5": 0.2571428571428572,
+        "hit_rate_at_5": 0.9523809523809523,
+        "mrr": 0.6698412698412698,
+        "no_gold_cases": 7,
+        "no_gold_candidate_rate": 1.0,
+        "average_candidates_retrieved": 4.607142857142857
+      },
+      "case_results": [
+        {
+          "case_id": "v2-dev-backend-python-api",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "exact-match",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2",
+            "resume-s3",
+            "resume-s12"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-aws-observability",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s5"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s4",
+            "resume-s2",
+            "resume-s5",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-kubernetes",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s1",
+            "resume-s12"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-stakeholder-communication",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s8",
+            "resume-s7",
+            "resume-s9",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-react-typescript",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s8",
+            "resume-s1",
+            "resume-s12",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-nextjs",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s7",
+            "resume-s2",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-accessibility",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s12"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s12",
+            "resume-s4",
+            "resume-s8",
+            "resume-s1",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-backend-node",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s11",
+            "resume-s6",
+            "resume-s8",
+            "resume-s1",
+            "resume-s12"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-sql-postgresql",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s4",
+            "resume-s1",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-machine-learning",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "training-only",
+            "negation",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s7",
+            "resume-s4",
+            "resume-s1",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-business-partnering",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "semantic-paraphrase",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s5",
+            "resume-s11"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s11",
+            "resume-s5",
+            "resume-s4",
+            "resume-s1",
+            "resume-s6"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-azure-cloud-engineering",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s12",
+            "resume-s1",
+            "resume-s8",
+            "resume-s11",
+            "resume-s9"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-aws-identity",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "abbreviation",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2",
+            "resume-s8",
+            "resume-s3",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-kubernetes-admin",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s8",
+            "resume-s1",
+            "resume-s9",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-incident-detection",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s10"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s10",
+            "resume-s8",
+            "resume-s1",
+            "resume-s2",
+            "resume-s5"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-terraform-ownership",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s5",
+            "resume-s8",
+            "resume-s1",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-android-kotlin",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "exact-match",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s12",
+            "resume-s2",
+            "resume-s3",
+            "resume-s11",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-ios-ownership",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-react-native",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "training-only",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s6",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-performance-reliability",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "semantic-paraphrase",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6",
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s12",
+            "resume-s1",
+            "resume-s9",
+            "resume-s8",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-production-mlops",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s7",
+            "resume-s6",
+            "resume-s12",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-production-generative-ai",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "prototype-only",
+            "negation",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s5"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s7",
+            "resume-s12",
+            "resume-s4",
+            "resume-s9"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-kubernetes-operations",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s8"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s9",
+            "resume-s7",
+            "resume-s12",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-business-communication",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s12",
+            "resume-s4",
+            "resume-s10",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-agile-leadership",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2",
+            "resume-s9",
+            "resume-s6",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-budget-ownership",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s8",
+            "resume-s1",
+            "resume-s7",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-software-engineering",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s7",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-cloud-migration",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s8",
+            "resume-s1",
+            "resume-s7",
+            "resume-s10"
+          ]
+        }
+      ]
+    },
+    "embedding": {
+      "configuration": {
+        "model": "text-embedding-3-small",
+        "similarity": "cosine"
+      },
+      "metrics": {
+        "answerable_cases": 21,
+        "recall_at_1": 0.7380952380952381,
+        "precision_at_1": 0.9047619047619048,
+        "hit_rate_at_1": 0.9047619047619048,
+        "recall_at_3": 0.8809523809523809,
+        "precision_at_3": 0.39682539682539675,
+        "hit_rate_at_3": 0.9523809523809523,
+        "recall_at_5": 0.9603174603174603,
+        "precision_at_5": 0.2761904761904762,
+        "hit_rate_at_5": 1.0,
+        "mrr": 0.9404761904761905,
+        "no_gold_cases": 7,
+        "no_gold_candidate_rate": 1.0,
+        "average_candidates_retrieved": 5.0
+      },
+      "case_results": [
+        {
+          "case_id": "v2-dev-backend-python-api",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "exact-match",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s1",
+            "resume-s12",
+            "resume-s3",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-aws-observability",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s5"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s5",
+            "resume-s1",
+            "resume-s12",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-kubernetes",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s12",
+            "resume-s1",
+            "resume-s4",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-stakeholder-communication",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s7",
+            "resume-s1",
+            "resume-s12",
+            "resume-s10",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-react-typescript",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s1",
+            "resume-s8",
+            "resume-s9",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-nextjs",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s2",
+            "resume-s6",
+            "resume-s1",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-accessibility",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s12"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s12",
+            "resume-s7",
+            "resume-s1",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-backend-node",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s11",
+            "resume-s1",
+            "resume-s2",
+            "resume-s9"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-sql-postgresql",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s1",
+            "resume-s3",
+            "resume-s6",
+            "resume-s12"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-machine-learning",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "training-only",
+            "negation",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s7",
+            "resume-s1",
+            "resume-s9",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-business-partnering",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "semantic-paraphrase",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s5",
+            "resume-s11"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s11",
+            "resume-s1",
+            "resume-s5",
+            "resume-s3",
+            "resume-s2"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-azure-cloud-engineering",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s1",
+            "resume-s8",
+            "resume-s12",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-aws-identity",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "abbreviation",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s1",
+            "resume-s4",
+            "resume-s9",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-kubernetes-admin",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s3",
+            "resume-s8",
+            "resume-s2",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-incident-detection",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s10"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s4",
+            "resume-s10",
+            "resume-s8",
+            "resume-s2"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-terraform-ownership",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s2",
+            "resume-s5",
+            "resume-s3",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-android-kotlin",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "exact-match",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s1",
+            "resume-s12",
+            "resume-s3",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-ios-ownership",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s1",
+            "resume-s5",
+            "resume-s2",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-react-native",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "training-only",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s2",
+            "resume-s1",
+            "resume-s12",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-performance-reliability",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "semantic-paraphrase",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6",
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s1",
+            "resume-s6",
+            "resume-s5",
+            "resume-s12"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-production-mlops",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s12",
+            "resume-s1",
+            "resume-s4",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-production-generative-ai",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "prototype-only",
+            "negation",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s5"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s8",
+            "resume-s3",
+            "resume-s11",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-kubernetes-operations",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s8"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s12",
+            "resume-s3",
+            "resume-s4",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-business-communication",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s8",
+            "resume-s12",
+            "resume-s1",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-agile-leadership",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s1",
+            "resume-s3",
+            "resume-s10",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-budget-ownership",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s10",
+            "resume-s4",
+            "resume-s3",
+            "resume-s7"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-software-engineering",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s2",
+            "resume-s4",
+            "resume-s10",
+            "resume-s7"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-cloud-migration",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s3",
+            "resume-s10",
+            "resume-s2",
+            "resume-s8"
+          ]
+        }
+      ]
+    },
+    "hybrid_rrf": {
+      "configuration": {
+        "children": [
+          "bm25",
+          "embedding"
+        ],
+        "rrf_k": 60,
+        "retrieval_depth": 20
+      },
+      "metrics": {
+        "answerable_cases": 21,
+        "recall_at_1": 0.5476190476190477,
+        "precision_at_1": 0.6666666666666666,
+        "hit_rate_at_1": 0.6666666666666666,
+        "recall_at_3": 0.8253968253968254,
+        "precision_at_3": 0.38095238095238093,
+        "hit_rate_at_3": 0.9523809523809523,
+        "recall_at_5": 0.8968253968253967,
+        "precision_at_5": 0.2571428571428572,
+        "hit_rate_at_5": 0.9523809523809523,
+        "mrr": 0.7936507936507937,
+        "no_gold_cases": 7,
+        "no_gold_candidate_rate": 1.0,
+        "average_candidates_retrieved": 5.0
+      },
+      "case_results": [
+        {
+          "case_id": "v2-dev-backend-python-api",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "exact-match",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2",
+            "resume-s3",
+            "resume-s12",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-aws-observability",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s5"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s1",
+            "resume-s5",
+            "resume-s2",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-kubernetes",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s1",
+            "resume-s12",
+            "resume-s4",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-backend-stakeholder-communication",
+          "profile_id": "dev-backend-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s7",
+            "resume-s8",
+            "resume-s10",
+            "resume-s1",
+            "resume-s5"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-react-typescript",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s1",
+            "resume-s8",
+            "resume-s3",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-nextjs",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s2",
+            "resume-s7",
+            "resume-s11",
+            "resume-s6"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-accessibility",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s12"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s12",
+            "resume-s1",
+            "resume-s7",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-dev-frontend-backend-node",
+          "profile_id": "dev-frontend-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s11",
+            "resume-s1",
+            "resume-s8",
+            "resume-s12"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-sql-postgresql",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "exact-match"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s1",
+            "resume-s6",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-machine-learning",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "training-only",
+            "negation",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s7",
+            "resume-s1",
+            "resume-s4",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-business-partnering",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "semantic-paraphrase",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s5",
+            "resume-s11"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s11",
+            "resume-s5",
+            "resume-s1",
+            "resume-s6",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-data-azure-cloud-engineering",
+          "profile_id": "dev-data-analyst",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s12",
+            "resume-s9",
+            "resume-s8",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-aws-identity",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "abbreviation",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2",
+            "resume-s4",
+            "resume-s10",
+            "resume-s8"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-kubernetes-admin",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s8",
+            "resume-s3",
+            "resume-s1",
+            "resume-s9"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-incident-detection",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "abbreviation",
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4",
+            "resume-s10"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s10",
+            "resume-s8",
+            "resume-s2",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-security-terraform-ownership",
+          "profile_id": "dev-security-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s5",
+            "resume-s8",
+            "resume-s1",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-android-kotlin",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "exact-match",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s2",
+            "resume-s12",
+            "resume-s1",
+            "resume-s3",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-ios-ownership",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s1",
+            "resume-s5",
+            "resume-s2",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-react-native",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "training-only",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s6",
+            "resume-s4",
+            "resume-s2",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-mobile-performance-reliability",
+          "profile_id": "dev-mobile-engineer",
+          "tags": [
+            "semantic-paraphrase",
+            "multi-evidence"
+          ],
+          "expected_evidence_ids": [
+            "resume-s6",
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s1",
+            "resume-s12",
+            "resume-s6",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-production-mlops",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s3",
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s12",
+            "resume-s4",
+            "resume-s7",
+            "resume-s6"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-production-generative-ai",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "prototype-only",
+            "negation",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s5"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s6",
+            "resume-s7",
+            "resume-s3",
+            "resume-s4",
+            "resume-s11"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-kubernetes-operations",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s8"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s8",
+            "resume-s12",
+            "resume-s4",
+            "resume-s7",
+            "resume-s3"
+          ]
+        },
+        {
+          "case_id": "v2-dev-ml-business-communication",
+          "profile_id": "dev-ml-engineer",
+          "tags": [
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s9"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s12",
+            "resume-s8",
+            "resume-s4",
+            "resume-s10"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-agile-leadership",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "multi-evidence",
+            "semantic-paraphrase"
+          ],
+          "expected_evidence_ids": [
+            "resume-s2",
+            "resume-s7"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s1",
+            "resume-s2",
+            "resume-s3",
+            "resume-s6",
+            "resume-s9"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-budget-ownership",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s5",
+            "resume-s10",
+            "resume-s7",
+            "resume-s8",
+            "resume-s1"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-software-engineering",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "negation",
+            "hard-negative",
+            "no-evidence"
+          ],
+          "expected_evidence_ids": [],
+          "retrieved_evidence_ids": [
+            "resume-s9",
+            "resume-s7",
+            "resume-s1",
+            "resume-s2",
+            "resume-s4"
+          ]
+        },
+        {
+          "case_id": "v2-dev-delivery-cloud-migration",
+          "profile_id": "dev-delivery-manager",
+          "tags": [
+            "scope-mismatch",
+            "hard-negative"
+          ],
+          "expected_evidence_ids": [
+            "resume-s4"
+          ],
+          "retrieved_evidence_ids": [
+            "resume-s4",
+            "resume-s8",
+            "resume-s10",
+            "resume-s3",
+            "resume-s1"
+          ]
+        }
+      ]
+    }
+  },
+  "embedding_usage": {
+    "api_requests": 56,
+    "input_tokens": 1679,
+    "cached_documents": 80
+  },
+  "decision": {
+    "minimum_recall_at_5": 0.9603174603174603,
+    "recall_gate_passed": false,
+    "ranking_or_precision_improved": false,
+    "status": "not_better_than_best_component"
+  }
+}

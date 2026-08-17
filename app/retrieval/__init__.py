@@ -8,6 +8,7 @@ from app.retrieval.embedding import (
     EmbeddingRetriever,
     OpenAIEmbeddingProvider,
 )
+from app.retrieval.hybrid import ReciprocalRankFusionRetriever
 from app.retrieval.models import RetrievedEvidence
 
 __all__ = [
@@ -19,5 +20,6 @@ __all__ = [
     "EmbeddingRetriever",
     "EvidenceRetriever",
     "OpenAIEmbeddingProvider",
+    "ReciprocalRankFusionRetriever",
     "RetrievedEvidence",
 ]
