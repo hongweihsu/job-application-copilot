@@ -8,6 +8,7 @@ from app.retrieval.embedding import (
     EmbeddingRetriever,
     OpenAIEmbeddingProvider,
 )
+from app.retrieval.factory import build_evidence_retriever, configured_retriever_name
 from app.retrieval.hybrid import ReciprocalRankFusionRetriever
 from app.retrieval.models import RetrievedEvidence
 
@@ -15,6 +16,8 @@ __all__ = [
     "BM25Retriever",
     "BM25NormalizedRetriever",
     "BM25StopwordRetriever",
+    "build_evidence_retriever",
+    "configured_retriever_name",
     "EmbeddingConfig",
     "EmbeddingProvider",
     "EmbeddingRetriever",

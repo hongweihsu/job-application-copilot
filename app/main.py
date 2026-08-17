@@ -11,6 +11,7 @@ from app.llm.analyzer import analyze_with_llm
 from app.llm.config import LLMConfig, llm_analysis_enabled
 from app.llm.provider import OpenAIRequirementDecisionProvider
 from app.models import AnalysisRequest, AnalysisResponse
+from app.retrieval import build_evidence_retriever
 
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
@@ -65,7 +66,13 @@ def analyze_application(request: AnalysisRequest) -> AnalysisResponse:
             raise HTTPException(status_code=503, detail="LLM analysis is not enabled.")
         try:
             provider = OpenAIRequirementDecisionProvider(LLMConfig.from_environment())
-            return analyze_with_llm(request.resume_text, request.job_description, provider)
+            retriever = build_evidence_retriever()
+            return analyze_with_llm(
+                request.resume_text,
+                request.job_description,
+                provider,
+                retriever=retriever,
+            )
         except OpenAIError as exc:
             raise HTTPException(status_code=502, detail="The LLM provider request failed.") from exc
         except ValueError as exc:
