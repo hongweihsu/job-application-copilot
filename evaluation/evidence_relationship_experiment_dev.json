@@ -1,0 +1,742 @@
+{
+  "dataset": "golden_dataset_v2.json",
+  "evaluated_split": "dev",
+  "cases": 28,
+  "profiles": 7,
+  "top_k": 5,
+  "prompt_version": "requirement-match-v2-evidence-relationships",
+  "baseline": {
+    "prompt_version": "requirement-match-v1",
+    "metrics": {
+      "classification": {
+        "accuracy": 0.8571428571428571,
+        "macro_f1": 0.8226711560044894,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 0.9285714285714286,
+            "f1": 0.962962962962963,
+            "support": 14
+          },
+          "partial": {
+            "precision": 0.6363636363636364,
+            "recall": 1.0,
+            "f1": 0.7777777777777778,
+            "support": 7
+          },
+          "missing": {
+            "precision": 1.0,
+            "recall": 0.5714285714285714,
+            "f1": 0.7272727272727273,
+            "support": 7
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 13,
+            "partial": 1,
+            "missing": 0
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 7,
+            "missing": 0
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 3,
+            "missing": 4
+          }
+        }
+      },
+      "citations": {
+        "citation_precision": 0.5,
+        "citation_coverage": 1.0,
+        "total_citations": 56
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.03571428571428571,
+        "violations": [
+          {
+            "case_id": "v2-dev-backend-kubernetes",
+            "claims": [
+              "Kubernetes administration experience"
+            ]
+          }
+        ]
+      },
+      "latency_seconds": {
+        "mean": 12.633002491135683,
+        "p50": 13.06363125005737,
+        "p95": 17.322007291950285
+      }
+    }
+  },
+  "candidate": {
+    "metrics": {
+      "classification": {
+        "accuracy": 0.75,
+        "macro_f1": 0.6745184639921482,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 1.0,
+            "recall": 0.8571428571428571,
+            "f1": 0.923076923076923,
+            "support": 14
+          },
+          "partial": {
+            "precision": 0.5,
+            "recall": 0.2857142857142857,
+            "f1": 0.36363636363636365,
+            "support": 7
+          },
+          "missing": {
+            "precision": 0.5833333333333334,
+            "recall": 1.0,
+            "f1": 0.7368421052631579,
+            "support": 7
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 12,
+            "partial": 2,
+            "missing": 0
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 2,
+            "missing": 5
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 7
+          }
+        }
+      },
+      "citations": {
+        "citation_precision": 0.8333333333333334,
+        "citation_coverage": 0.7619047619047619,
+        "total_citations": 24
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.0,
+        "violations": []
+      },
+      "latency_seconds": {
+        "mean": 16.063993389892858,
+        "p50": 12.98864012514241,
+        "p95": 43.223153833067045
+      }
+    },
+    "llm_usage": {
+      "requests": 28,
+      "input_tokens": 15833,
+      "output_tokens": 33013,
+      "provider_elapsed_seconds": 432.61630546092056
+    },
+    "case_results": [
+      {
+        "case_id": "v2-dev-backend-python-api",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s2",
+          "resume-s3"
+        ],
+        "cited_evidence_ids": [
+          "resume-s2"
+        ],
+        "generated_text": "To strengthen the resume for this requirement, explicitly state 'built and deployed REST API services in production' and, if possible, clarify the candidate's ownership (e.g., implemented/developed vs. designed) and any scalability responsibilities (e.g., handled X RPS, autoscaling, or architectural patterns used).",
+        "supporting_evidence_ids": [
+          "resume-s2"
+        ],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s1",
+          "resume-s4",
+          "resume-s12"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-backend-aws-observability",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s4",
+          "resume-s5"
+        ],
+        "cited_evidence_ids": [
+          "resume-s4",
+          "resume-s5"
+        ],
+        "generated_text": "No change needed to claim AWS deployment and monitoring. If clarity is desired, ask the candidate to specify extent of operational ownership (e.g., CI/CD involvement, frequency of deployments, who owned production incident leadership) and scale or frequency of monitoring responsibilities.",
+        "supporting_evidence_ids": [
+          "resume-s4",
+          "resume-s5"
+        ],
+        "related_evidence_ids": [
+          "resume-s12",
+          "resume-s11",
+          "resume-s1"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-backend-kubernetes",
+        "expected_status": "missing",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [],
+        "generated_text": "Mark as not meeting this requirement. If the role can accept adjacent experience, clarify whether experience with ECS or platform-managed container deployments is acceptable. Otherwise, ask the candidate directly for any production Kubernetes cluster administration details (specific responsibilities, tooling, cluster scope) or request relevant experience/certification.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s4",
+          "resume-s12",
+          "resume-s1"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s6"
+        ]
+      },
+      {
+        "case_id": "v2-dev-backend-stakeholder-communication",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s7"
+        ],
+        "cited_evidence_ids": [
+          "resume-s7"
+        ],
+        "generated_text": "If possible, add brief quantification or examples (e.g., frequency of interactions, types of decisions clarified, outcome of clarifications) to further evidence 'strong' communication skills.",
+        "supporting_evidence_ids": [
+          "resume-s7"
+        ],
+        "related_evidence_ids": [
+          "resume-s10",
+          "resume-s12"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-frontend-react-typescript",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s2"
+        ],
+        "cited_evidence_ids": [
+          "resume-s2"
+        ],
+        "generated_text": "No change needed to meet this requirement; if desired, the candidate could list project duration, specific repositories or modules, and examples of responsibilities to further document professional scope.",
+        "supporting_evidence_ids": [
+          "resume-s2"
+        ],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s8",
+          "resume-s11",
+          "resume-s9"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-frontend-nextjs",
+        "expected_status": "missing",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [],
+        "generated_text": "If the candidate has Next.js production experience, update the resume to state it explicitly (e.g., \"Built and shipped production applications using Next.js\" with context). If not, consider accepting adjacent React/TypeScript experience as partial evidence or reword the job requirement to allow React experience without Next.js.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s2",
+          "resume-s1",
+          "resume-s3",
+          "resume-s6"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s9"
+        ]
+      },
+      {
+        "case_id": "v2-dev-frontend-accessibility",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s4",
+          "resume-s12"
+        ],
+        "cited_evidence_ids": [
+          "resume-s4"
+        ],
+        "generated_text": "No additional evidence required to meet this requirement. Optionally, the resume could strengthen this by listing specific accessibility audits/tools used, scope (pages/features), or measurable outcomes (e.g., reduced accessibility defects) but do not add these unless they are factual.",
+        "supporting_evidence_ids": [
+          "resume-s4"
+        ],
+        "related_evidence_ids": [
+          "resume-s12",
+          "resume-s7"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-frontend-backend-node",
+        "expected_status": "partial",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [
+          "resume-s6"
+        ],
+        "cited_evidence_ids": [
+          "resume-s6"
+        ],
+        "generated_text": "To meet this requirement fully, provide resume details showing backend architecture and production operations with Node.js\u2014for example: led design/architecture of Node.js services, ownership of production deployments and incident response, implemented CI/CD, monitoring/logging, scaling/performance optimization, and the scope/scale of systems supported (traffic, services, team size). If such experience exists, cite specific projects, responsibilities, tools, and outcomes.",
+        "supporting_evidence_ids": [
+          "resume-s6"
+        ],
+        "related_evidence_ids": [
+          "resume-s11",
+          "resume-s1",
+          "resume-s2",
+          "resume-s9"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-data-sql-postgresql",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s2"
+        ],
+        "cited_evidence_ids": [
+          "resume-s2"
+        ],
+        "generated_text": "No additional claims are needed to establish basic support. To strengthen the resume for this requirement, consider specifying examples of advanced SQL techniques used (e.g., window functions, CTEs, query optimization), dataset sizes, performance improvements, or PostgreSQL-specific features leveraged.",
+        "supporting_evidence_ids": [
+          "resume-s2"
+        ],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s6",
+          "resume-s12"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-data-machine-learning",
+        "expected_status": "missing",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [],
+        "generated_text": "To meet this requirement, provide specific resume evidence of end-to-end production ML work (training, deployment, and monitoring), including tools/platforms used, scope, and your role. If no production experience exists, consider rewording the job requirement to accept model development or experimentation outside production.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s7",
+          "resume-s1",
+          "resume-s9",
+          "resume-s3"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s8"
+        ]
+      },
+      {
+        "case_id": "v2-dev-data-business-partnering",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s5",
+          "resume-s11"
+        ],
+        "cited_evidence_ids": [
+          "resume-s5"
+        ],
+        "generated_text": "If possible, include counts or outcomes (e.g., number of workshops/presentations, types of decisions informed) to make the communication and requirements-gathering impact more explicit.",
+        "supporting_evidence_ids": [
+          "resume-s5"
+        ],
+        "related_evidence_ids": [
+          "resume-s11",
+          "resume-s1",
+          "resume-s3",
+          "resume-s2"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-data-azure-cloud-engineering",
+        "expected_status": "partial",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [
+          "resume-s9"
+        ],
+        "cited_evidence_ids": [],
+        "generated_text": "Request explicit resume statements showing ownership or operator responsibilities for Azure resources and production platforms (e.g., 'owned/managed Azure resource groups, VMs, AKS, App Services; responsible for production deployments, monitoring, incident response, and runbook execution'), including technologies, actions taken, and scope/duration.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s9",
+          "resume-s12"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s8"
+        ]
+      },
+      {
+        "case_id": "v2-dev-security-aws-identity",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s2"
+        ],
+        "cited_evidence_ids": [
+          "resume-s2"
+        ],
+        "generated_text": "No change needed to support this requirement; if possible, add duration, scope (number of accounts or users), or specific IAM features used (policies, permission boundaries, STS, SSO, cross-account roles) to strengthen the resume.",
+        "supporting_evidence_ids": [
+          "resume-s2"
+        ],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s4",
+          "resume-s10"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-security-kubernetes-admin",
+        "expected_status": "missing",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [],
+        "generated_text": "To meet this requirement, add resume examples that explicitly state hands-on administration of production Kubernetes clusters and Kubernetes-specific hardening tasks (for example: implemented RBAC and NetworkPolicies, applied CIS Kubernetes Benchmark remediations, configured audit logging and kube-apiserver security flags, performed cluster upgrades/backups, and managed cluster access in production). If only non-production or dashboard-review experience exists, clarify that distinction rather than implying production admin.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s2",
+          "resume-s8",
+          "resume-s1"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s5"
+        ]
+      },
+      {
+        "case_id": "v2-dev-security-incident-detection",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s4",
+          "resume-s10"
+        ],
+        "cited_evidence_ids": [
+          "resume-s4",
+          "resume-s10"
+        ],
+        "generated_text": "If possible, the candidate or resume could add explicit mentions of other SIEM platforms, scale (events per day / environments monitored), or examples of detection rule implementation and deployment to strengthen evidence; the job posting could specify preferred SIEM tools or expected scope to make matching clearer.",
+        "supporting_evidence_ids": [
+          "resume-s4",
+          "resume-s10"
+        ],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s8",
+          "resume-s2"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-security-terraform-ownership",
+        "expected_status": "partial",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [
+          "resume-s6"
+        ],
+        "cited_evidence_ids": [],
+        "generated_text": "To meet this requirement, include explicit resume statements showing ownership and delivery of production Terraform modules (e.g., authored/maintained specific production Terraform modules, managed state/backends, deployed infrastructure changes to production, CI/CD for module release). Cite module names, scope, and concrete delivery responsibilities rather than only reviewing PRs.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s2",
+          "resume-s3",
+          "resume-s5",
+          "resume-s1"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s6"
+        ]
+      },
+      {
+        "case_id": "v2-dev-mobile-android-kotlin",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s2",
+          "resume-s3"
+        ],
+        "cited_evidence_ids": [
+          "resume-s2"
+        ],
+        "generated_text": "No change required; to further strengthen the claim, consider adding duration or explicit 'production' wording, or list any additional modern UI frameworks if relevant.",
+        "supporting_evidence_ids": [
+          "resume-s2"
+        ],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s12",
+          "resume-s3",
+          "resume-s11"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-mobile-ios-ownership",
+        "expected_status": "partial",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [
+          "resume-s4"
+        ],
+        "cited_evidence_ids": [],
+        "generated_text": "Request explicit evidence of end-to-end ownership of a production iOS app (e.g., App Store listing, description of responsibilities across design-to-release, release management, monitoring, and post-release fixes). If willingness to consider adjacent experience, clarify whether significant Swift/iOS development without ownership or Android mobile ownership would be acceptable.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s2",
+          "resume-s5",
+          "resume-s11"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s4"
+        ]
+      },
+      {
+        "case_id": "v2-dev-mobile-react-native",
+        "expected_status": "missing",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [],
+        "generated_text": "Ask the candidate to provide explicit evidence of production React Native work (e.g., app names or links, role and features delivered in a shipped React Native app, or a resume bullet stating React Native development in production). If they have none, consider rewording the requirement to accept native Android production experience if appropriate.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s2",
+          "resume-s12",
+          "resume-s11"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s5"
+        ]
+      },
+      {
+        "case_id": "v2-dev-mobile-performance-reliability",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s6",
+          "resume-s9"
+        ],
+        "cited_evidence_ids": [
+          "resume-s1",
+          "resume-s6",
+          "resume-s9"
+        ],
+        "generated_text": "If possible, clarify in the resume that the performance work (resume-s6) was performed on the Android consumer app, include the profiling tools used, and indicate that Crashlytics was configured in production (any alerting thresholds, paging/incident process, or scale/impact metrics) to strengthen the claim.",
+        "supporting_evidence_ids": [
+          "resume-s1",
+          "resume-s6",
+          "resume-s9"
+        ],
+        "related_evidence_ids": [
+          "resume-s12",
+          "resume-s5"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-ml-production-mlops",
+        "expected_status": "supported",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [
+          "resume-s2",
+          "resume-s3",
+          "resume-s4"
+        ],
+        "cited_evidence_ids": [
+          "resume-s3",
+          "resume-s4",
+          "resume-s12"
+        ],
+        "generated_text": "Ask the candidate to confirm whether they ran model training jobs in production (describe training pipelines, platforms used, orchestration, and frequency), or update the resume to explicitly state production training experience (e.g., 'ran training pipelines in production using X with Y scheduling/orchestration').",
+        "supporting_evidence_ids": [
+          "resume-s3",
+          "resume-s4",
+          "resume-s12"
+        ],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s8"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-ml-production-generative-ai",
+        "expected_status": "partial",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [
+          "resume-s5"
+        ],
+        "cited_evidence_ids": [
+          "resume-s5",
+          "resume-s3"
+        ],
+        "generated_text": "Request concrete examples that demonstrate: (1) production deployment of generative AI and/or RAG services (not just prototypes), (2) scale indicators (request volumes, throughput, latency targets, number of concurrent users or requests, cluster sizes), and (3) operational responsibilities (monitoring, SLA, incident handling, autoscaling, cost management) and the specific tooling/platform used for production RAG (e.g., vector DB, retrieval stack, model serving infra).",
+        "supporting_evidence_ids": [
+          "resume-s5",
+          "resume-s3"
+        ],
+        "related_evidence_ids": [
+          "resume-s8",
+          "resume-s11",
+          "resume-s1"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-ml-kubernetes-operations",
+        "expected_status": "partial",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [
+          "resume-s8"
+        ],
+        "cited_evidence_ids": [],
+        "generated_text": "Request clarification or examples from the candidate showing they personally performed Kubernetes deployments and cluster operations (e.g., provisioning/upgrading clusters, deploying with kubectl/helm, managing nodes/scaling, troubleshooting cluster issues, CI/CD to K8s). Ask for specific tasks, tools used, and whether they acted without platform-team deployment support.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s12",
+          "resume-s4",
+          "resume-s11"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s8"
+        ]
+      },
+      {
+        "case_id": "v2-dev-ml-business-communication",
+        "expected_status": "supported",
+        "predicted_status": "supported",
+        "expected_evidence_ids": [
+          "resume-s9"
+        ],
+        "cited_evidence_ids": [
+          "resume-s9"
+        ],
+        "generated_text": "Keep resume-s9 as-is for this requirement. If possible, add brief specifics (e.g., frequency, decisions influenced, other business audiences) to strengthen the claim of communicating model performance and risk to non-technical stakeholders.",
+        "supporting_evidence_ids": [
+          "resume-s9"
+        ],
+        "related_evidence_ids": [
+          "resume-s4",
+          "resume-s12",
+          "resume-s1"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-delivery-agile-leadership",
+        "expected_status": "supported",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [
+          "resume-s2",
+          "resume-s7"
+        ],
+        "cited_evidence_ids": [
+          "resume-s2",
+          "resume-s1"
+        ],
+        "generated_text": "To fully meet this requirement, state explicitly that you led Agile delivery across cross-functional teams (e.g., 'Led Agile delivery across X cross-functional teams including engineering, QA, product and design'), and, if applicable, note concurrent scope or ownership of end-to-end delivery across those teams.",
+        "supporting_evidence_ids": [
+          "resume-s2",
+          "resume-s1"
+        ],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s10",
+          "resume-s4"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-delivery-budget-ownership",
+        "expected_status": "missing",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [],
+        "generated_text": "If the candidate has the experience, add an explicit bullet such as: 'Owned annual technology budget of $X and produced quarterly/annual financial forecasts, including variance analysis and vendor spend management.' If not, avoid claiming budget ownership and instead highlight related financial planning or estimation responsibilities with clear scope and metrics.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s10",
+          "resume-s3"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s5"
+        ]
+      },
+      {
+        "case_id": "v2-dev-delivery-software-engineering",
+        "expected_status": "missing",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [],
+        "generated_text": "Request concrete examples of recent production engineering work (e.g., code contributions, deployed services, repositories, PRs, or project names) or adjust the requirement to accept non-coding engineering/leadership experience if appropriate.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s2",
+          "resume-s4",
+          "resume-s10",
+          "resume-s7"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s9"
+        ]
+      },
+      {
+        "case_id": "v2-dev-delivery-cloud-migration",
+        "expected_status": "partial",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [
+          "resume-s4"
+        ],
+        "cited_evidence_ids": [],
+        "generated_text": "Request specific evidence that the candidate owned the cloud migration architecture and implementation (e.g., 'led architecture design and implementation for cloud migration, made technical decisions, selected cloud services, implemented migration strategy, and deployed to production'), including technologies, scope, and outcomes. Alternatively, if the role accepts program/coordination responsibility rather than technical ownership, reword the requirement to specify coordination/program management of cloud migration.",
+        "supporting_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s2",
+          "resume-s10",
+          "resume-s8"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s4"
+        ]
+      }
+    ]
+  },
+  "embedding_usage": {
+    "model": "text-embedding-3-small",
+    "requests": 28,
+    "input_tokens": 1398,
+    "cached_documents": 80
+  },
+  "decision": {
+    "accuracy_preserved": false,
+    "macro_f1_preserved": false,
+    "citation_precision_improved": true,
+    "citation_coverage_preserved": false,
+    "safety_preserved": true,
+    "status": "needs_error_analysis"
+  }
+}
