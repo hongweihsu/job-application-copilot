@@ -34,6 +34,8 @@ class MissingProvider:
             status="missing",
             confidence=0.9,
             evidence_ids=[],
+            related_evidence_ids=[],
+            contradictory_evidence_ids=[],
             matched_terms=[],
             explanation="No direct evidence.",
             recommendation="Do not add unsupported experience.",
@@ -59,3 +61,4 @@ def test_llm_pipeline_evaluation_records_quality_usage_and_cases():
     assert result["metrics"]["safety"]["unsupported_claim_rate"] == 0.0
     assert result["llm_usage"]["requests"] == 1
     assert result["case_results"][0]["case_id"] == "dev-case"
+    assert result["case_results"][0]["related_evidence_ids"] == []

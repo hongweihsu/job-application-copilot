@@ -39,6 +39,8 @@ def decision(**overrides) -> LLMRequirementDecision:
         "status": "supported",
         "confidence": 0.9,
         "evidence_ids": ["resume-s1"],
+        "related_evidence_ids": [],
+        "contradictory_evidence_ids": [],
         "matched_terms": ["leadership"],
         "explanation": "The evidence directly describes leading engineers.",
         "recommendation": "Keep the evidence and quantify the delivery outcome.",
@@ -55,7 +57,7 @@ def test_llm_analysis_returns_versioned_structured_result():
     )
     assert result.analyzer == "llm"
     assert result.model == "fake-model-v1"
-    assert result.prompt_version == "requirement-match-v1"
+    assert result.prompt_version == "requirement-match-v2-evidence-relationships"
     assert result.matches[0].evidence[0].text.startswith("Led four engineers")
 
 
@@ -98,10 +100,62 @@ def test_llm_analysis_rejects_citation_outside_retrieved_evidence():
 
 
 def test_llm_schema_rejects_missing_decision_with_evidence():
-    with pytest.raises(ValueError, match="missing requirement cannot cite evidence"):
+    with pytest.raises(ValueError, match="missing requirement cannot cite supporting evidence"):
         decision(status="missing", evidence_ids=["resume-s1"])
 
 
-def test_llm_schema_requires_evidence_for_positive_decisions():
-    with pytest.raises(ValueError, match="require evidence"):
-        decision(status="partial", evidence_ids=[])
+def test_llm_schema_requires_supporting_evidence_for_supported_decisions():
+    with pytest.raises(ValueError, match="requires supporting evidence"):
+        decision(status="supported", evidence_ids=[])
+
+
+def test_llm_analysis_downgrades_ungrounded_partial_to_missing():
+    result = analyze_with_llm(
+        "Evaluated React Native in a hackathon without shipping it.",
+        "Production React Native application experience is required.",
+        FakeProvider(
+            decision(
+                status="partial",
+                evidence_ids=[],
+                related_evidence_ids=["resume-s1"],
+            )
+        ),
+        FakeRetriever(),
+    )
+
+    assert result.matches[0].status == "missing"
+    assert result.matches[0].evidence == []
+    assert result.matches[0].related_evidence[0].evidence_id == "resume-s1"
+
+
+def test_llm_schema_keeps_related_and_contradictory_evidence_out_of_supporting_citations():
+    result = analyze_with_llm(
+        "Reviewed Kubernetes dashboards but did not administer production clusters.",
+        "Production Kubernetes administration experience is required.",
+        FakeProvider(
+            decision(
+                status="missing",
+                evidence_ids=[],
+                matched_terms=["kubernetes"],
+                related_evidence_ids=[],
+                contradictory_evidence_ids=["resume-s1"],
+            )
+        ),
+        FakeRetriever(),
+    )
+
+    assert result.matches[0].evidence == []
+    assert result.matches[0].contradictory_evidence[0].evidence_id == "resume-s1"
+
+
+def test_llm_schema_rejects_overlapping_relationship_groups():
+    with pytest.raises(ValueError, match="more than one relationship"):
+        decision(related_evidence_ids=["resume-s1"])
+
+
+def test_prompt_treats_named_technology_as_a_material_constraint():
+    from app.llm.prompt import SYSTEM_PROMPT
+
+    normalized_prompt = " ".join(SYSTEM_PROMPT.split())
+    assert "named language, framework, platform" in normalized_prompt
+    assert "native Android instead of React Native" in normalized_prompt

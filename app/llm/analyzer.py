@@ -1,5 +1,4 @@
 from app.analyzer import _sentences, extract_requirements
-from app.llm.models import LLMRequirementDecision
 from app.llm.prompt import PROMPT_VERSION
 from app.llm.provider import RequirementDecisionProvider
 from app.models import AnalysisResponse, AnalysisSummary, Evidence, RequirementMatch
@@ -19,13 +18,13 @@ def _score(matches: list[RequirementMatch]) -> AnalysisSummary:
     )
 
 
-def _validated_evidence(
-    decision: LLMRequirementDecision, evidence_by_id: dict[str, str]
+def _validated_evidence_ids(
+    evidence_ids: list[str], evidence_by_id: dict[str, str]
 ) -> list[Evidence]:
-    unknown_ids = set(decision.evidence_ids) - evidence_by_id.keys()
+    unknown_ids = set(evidence_ids) - evidence_by_id.keys()
     if unknown_ids:
         raise ValueError(f"Model cited unknown evidence IDs: {sorted(unknown_ids)}")
-    return [Evidence(evidence_id=item, text=evidence_by_id[item]) for item in decision.evidence_ids]
+    return [Evidence(evidence_id=item, text=evidence_by_id[item]) for item in evidence_ids]
 
 
 def analyze_with_llm(
@@ -46,13 +45,24 @@ def analyze_with_llm(
         retrieved = active_retriever.retrieve(requirement, evidence_units, top_k=top_k)
         retrieved_by_id = {item.evidence_id: item.text for item in retrieved}
         decision = provider.decide(requirement, list(retrieved_by_id.items()))
+        grounded_status = (
+            "missing"
+            if decision.status == "partial" and not decision.evidence_ids
+            else decision.status
+        )
         matches.append(
             RequirementMatch(
                 requirement=requirement,
-                status=decision.status,
+                status=grounded_status,
                 confidence=decision.confidence,
                 matched_terms=decision.matched_terms,
-                evidence=_validated_evidence(decision, retrieved_by_id),
+                evidence=_validated_evidence_ids(decision.evidence_ids, retrieved_by_id),
+                related_evidence=_validated_evidence_ids(
+                    decision.related_evidence_ids, retrieved_by_id
+                ),
+                contradictory_evidence=_validated_evidence_ids(
+                    decision.contradictory_evidence_ids, retrieved_by_id
+                ),
                 recommendation=decision.recommendation,
             )
         )

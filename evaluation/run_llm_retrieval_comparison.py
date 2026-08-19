@@ -25,6 +25,7 @@ def _percentile(values: list[float], percentile: float) -> float:
 
 def evaluate_llm_pipeline(cases: list[dict], provider, retriever, top_k: int = 5) -> dict:
     results = []
+    evidence_relationships = []
     latencies = []
     for index, case in enumerate(cases, start=1):
         print(f"[{retriever.method_name} {index}/{len(cases)}] {case['id']}", flush=True)
@@ -53,6 +54,16 @@ def evaluate_llm_pipeline(cases: list[dict], provider, retriever, top_k: int = 5
                 generated_text=match.recommendation,
             )
         )
+        evidence_relationships.append(
+            {
+                "case_id": case["id"],
+                "supporting_evidence_ids": [item.evidence_id for item in match.evidence],
+                "related_evidence_ids": [item.evidence_id for item in match.related_evidence],
+                "contradictory_evidence_ids": [
+                    item.evidence_id for item in match.contradictory_evidence
+                ],
+            }
+        )
 
     return {
         "metrics": {
@@ -79,6 +90,9 @@ def evaluate_llm_pipeline(cases: list[dict], provider, retriever, top_k: int = 5
                 "expected_evidence_ids": result.expected_evidence_ids,
                 "cited_evidence_ids": result.retrieved_evidence_ids,
                 "generated_text": result.generated_text,
+                **next(
+                    item for item in evidence_relationships if item["case_id"] == result.case_id
+                ),
             }
             for result in results
         ],
