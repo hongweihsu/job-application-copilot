@@ -47,7 +47,8 @@ def analyze_with_llm(
         decision = provider.decide(requirement, list(retrieved_by_id.items()))
         grounded_status = (
             "missing"
-            if decision.status == "partial" and not decision.evidence_ids
+            if decision.status == "partial"
+            and not (decision.evidence_ids or decision.partial_evidence_ids)
             else decision.status
         )
         matches.append(
@@ -57,6 +58,9 @@ def analyze_with_llm(
                 confidence=decision.confidence,
                 matched_terms=decision.matched_terms,
                 evidence=_validated_evidence_ids(decision.evidence_ids, retrieved_by_id),
+                partial_evidence=_validated_evidence_ids(
+                    decision.partial_evidence_ids, retrieved_by_id
+                ),
                 related_evidence=_validated_evidence_ids(
                     decision.related_evidence_ids, retrieved_by_id
                 ),

@@ -1,0 +1,204 @@
+{
+  "dataset": "golden_dataset_v2.json",
+  "evaluated_split": "dev",
+  "target_case_ids": [
+    "v2-dev-security-terraform-ownership",
+    "v2-dev-mobile-ios-ownership",
+    "v2-dev-ml-kubernetes-operations",
+    "v2-dev-delivery-cloud-migration",
+    "v2-dev-mobile-react-native"
+  ],
+  "prompt_version": "requirement-match-v3-partial-evidence",
+  "top_k": 5,
+  "candidate": {
+    "metrics": {
+      "classification": {
+        "accuracy": 0.6,
+        "macro_f1": 0.25,
+        "false_supported_rate": 0.0,
+        "per_class": {
+          "supported": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          },
+          "partial": {
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1": 0.75,
+            "support": 4
+          },
+          "missing": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 1
+          }
+        },
+        "confusion_matrix": {
+          "supported": {
+            "supported": 0,
+            "partial": 0,
+            "missing": 0
+          },
+          "partial": {
+            "supported": 0,
+            "partial": 3,
+            "missing": 1
+          },
+          "missing": {
+            "supported": 0,
+            "partial": 1,
+            "missing": 0
+          }
+        }
+      },
+      "citations": {
+        "citation_precision": 0.75,
+        "citation_coverage": 0.75,
+        "total_citations": 4
+      },
+      "safety": {
+        "unsupported_claim_rate": 0.0,
+        "violations": []
+      },
+      "latency_seconds": {
+        "mean": 15.45612951638177,
+        "p50": 14.675411708187312,
+        "p95": 19.59382399986498
+      }
+    },
+    "llm_usage": {
+      "requests": 5,
+      "input_tokens": 3199,
+      "output_tokens": 5543,
+      "provider_elapsed_seconds": 72.65265508275479
+    },
+    "case_results": [
+      {
+        "case_id": "v2-dev-security-terraform-ownership",
+        "expected_status": "partial",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [
+          "resume-s6"
+        ],
+        "cited_evidence_ids": [
+          "resume-s6"
+        ],
+        "generated_text": "To support this requirement, provide resume lines that explicitly state ownership/maintenance of production Terraform modules and responsibility for infrastructure delivery (for example: 'Owned and maintained production Terraform modules for X services, including module design, reviews, and publishing to a private registry' or 'Led infrastructure delivery using Terraform to provision and deploy production environments').",
+        "supporting_evidence_ids": [],
+        "partial_evidence_ids": [
+          "resume-s6"
+        ],
+        "related_evidence_ids": [
+          "resume-s2",
+          "resume-s3",
+          "resume-s5",
+          "resume-s1"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-mobile-ios-ownership",
+        "expected_status": "partial",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [
+          "resume-s4"
+        ],
+        "cited_evidence_ids": [
+          "resume-s4"
+        ],
+        "generated_text": "Ask the candidate to provide explicit evidence of end-to-end ownership of a production iOS app written in Swift (e.g., project names, scope of ownership, responsibilities for releases/CI, production users, and duration). If no such experience exists, reframe the resume to avoid implying iOS ownership or highlight transferable responsibilities (release management, feature ownership) while being explicit about platform differences.",
+        "supporting_evidence_ids": [],
+        "partial_evidence_ids": [
+          "resume-s4"
+        ],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s2",
+          "resume-s5",
+          "resume-s11"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-ml-kubernetes-operations",
+        "expected_status": "partial",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [
+          "resume-s8"
+        ],
+        "cited_evidence_ids": [
+          "resume-s8"
+        ],
+        "generated_text": "If the candidate has the requested experience, update the resume to state it explicitly and with brief specifics. For example: 'Independently deployed and managed services on Kubernetes (EKS/GKE/AKS) using Helm and kubectl; owned cluster upgrades, scaling, and incident remediation' or 'Owned CI/CD to deploy to Kubernetes and managed cluster operations (node management, monitoring, rollback).' Avoid implying independence if deployments were performed by a platform team.",
+        "supporting_evidence_ids": [],
+        "partial_evidence_ids": [
+          "resume-s8"
+        ],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s12",
+          "resume-s11",
+          "resume-s4"
+        ],
+        "contradictory_evidence_ids": []
+      },
+      {
+        "case_id": "v2-dev-delivery-cloud-migration",
+        "expected_status": "partial",
+        "predicted_status": "missing",
+        "expected_evidence_ids": [
+          "resume-s4"
+        ],
+        "cited_evidence_ids": [],
+        "generated_text": "If you did have technical ownership, revise the resume to state that explicitly and include concrete, verifiable details: e.g., \u2018Owned architecture and implementation of cloud migration to [cloud provider], responsible for design decisions, migration plan, and execution,\u2019 plus scope (systems/users), duration, and measurable outcomes. If you did not own those responsibilities, avoid claiming technical ownership and instead continue to highlight coordination and stakeholder/PM leadership roles as shown.",
+        "supporting_evidence_ids": [],
+        "partial_evidence_ids": [],
+        "related_evidence_ids": [
+          "resume-s3",
+          "resume-s10",
+          "resume-s2",
+          "resume-s8"
+        ],
+        "contradictory_evidence_ids": [
+          "resume-s4"
+        ]
+      },
+      {
+        "case_id": "v2-dev-mobile-react-native",
+        "expected_status": "missing",
+        "predicted_status": "partial",
+        "expected_evidence_ids": [],
+        "cited_evidence_ids": [
+          "resume-s5"
+        ],
+        "generated_text": "Request evidence of React Native used in a production app (e.g., shipped app, release notes, or role description noting React Native development), or relax the requirement to accept native Android mobile development if appropriate.",
+        "supporting_evidence_ids": [],
+        "partial_evidence_ids": [
+          "resume-s5"
+        ],
+        "related_evidence_ids": [
+          "resume-s1",
+          "resume-s2",
+          "resume-s12",
+          "resume-s11"
+        ],
+        "contradictory_evidence_ids": []
+      }
+    ]
+  },
+  "embedding_usage": {
+    "model": "text-embedding-3-small",
+    "requests": 5,
+    "input_tokens": 642
+  },
+  "decision": {
+    "correct_cases": 3,
+    "total_cases": 5,
+    "partial_relationship_correct": false,
+    "missing_control_correct": false,
+    "status": "needs_error_analysis"
+  }
+}

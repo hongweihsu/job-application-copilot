@@ -49,7 +49,9 @@ def evaluate_llm_pipeline(cases: list[dict], provider, retriever, top_k: int = 5
                 expected_status=case["expected_status"],
                 predicted_status=match.status,
                 expected_evidence_ids=case["expected_evidence_ids"],
-                retrieved_evidence_ids=[item.evidence_id for item in match.evidence],
+                retrieved_evidence_ids=[
+                    item.evidence_id for item in [*match.evidence, *match.partial_evidence]
+                ],
                 forbidden_claims=case["forbidden_claims"],
                 generated_text=match.recommendation,
             )
@@ -58,6 +60,7 @@ def evaluate_llm_pipeline(cases: list[dict], provider, retriever, top_k: int = 5
             {
                 "case_id": case["id"],
                 "supporting_evidence_ids": [item.evidence_id for item in match.evidence],
+                "partial_evidence_ids": [item.evidence_id for item in match.partial_evidence],
                 "related_evidence_ids": [item.evidence_id for item in match.related_evidence],
                 "contradictory_evidence_ids": [
                     item.evidence_id for item in match.contradictory_evidence

@@ -39,6 +39,7 @@ def decision(**overrides) -> LLMRequirementDecision:
         "status": "supported",
         "confidence": 0.9,
         "evidence_ids": ["resume-s1"],
+        "partial_evidence_ids": [],
         "related_evidence_ids": [],
         "contradictory_evidence_ids": [],
         "matched_terms": ["leadership"],
@@ -57,7 +58,7 @@ def test_llm_analysis_returns_versioned_structured_result():
     )
     assert result.analyzer == "llm"
     assert result.model == "fake-model-v1"
-    assert result.prompt_version == "requirement-match-v2-evidence-relationships"
+    assert result.prompt_version == "requirement-match-v3-partial-evidence"
     assert result.matches[0].evidence[0].text.startswith("Led four engineers")
 
 
@@ -100,7 +101,7 @@ def test_llm_analysis_rejects_citation_outside_retrieved_evidence():
 
 
 def test_llm_schema_rejects_missing_decision_with_evidence():
-    with pytest.raises(ValueError, match="missing requirement cannot cite supporting evidence"):
+    with pytest.raises(ValueError, match="cannot cite supporting or partial evidence"):
         decision(status="missing", evidence_ids=["resume-s1"])
 
 
@@ -117,6 +118,7 @@ def test_llm_analysis_downgrades_ungrounded_partial_to_missing():
             decision(
                 status="partial",
                 evidence_ids=[],
+                partial_evidence_ids=[],
                 related_evidence_ids=["resume-s1"],
             )
         ),
@@ -136,6 +138,7 @@ def test_llm_schema_keeps_related_and_contradictory_evidence_out_of_supporting_c
             decision(
                 status="missing",
                 evidence_ids=[],
+                partial_evidence_ids=[],
                 matched_terms=["kubernetes"],
                 related_evidence_ids=[],
                 contradictory_evidence_ids=["resume-s1"],
@@ -159,3 +162,22 @@ def test_prompt_treats_named_technology_as_a_material_constraint():
     normalized_prompt = " ".join(SYSTEM_PROMPT.split())
     assert "named language, framework, platform" in normalized_prompt
     assert "native Android instead of React Native" in normalized_prompt
+
+
+def test_llm_analysis_preserves_partial_evidence_with_material_limitation():
+    result = analyze_with_llm(
+        "Reviewed Terraform pull requests while modules were owned by the platform team.",
+        "Ownership of production Terraform modules is required.",
+        FakeProvider(
+            decision(
+                status="partial",
+                evidence_ids=[],
+                partial_evidence_ids=["resume-s1"],
+                matched_terms=["terraform"],
+            )
+        ),
+        FakeRetriever(),
+    )
+
+    assert result.matches[0].status == "partial"
+    assert result.matches[0].partial_evidence[0].evidence_id == "resume-s1"

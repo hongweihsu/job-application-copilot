@@ -34,6 +34,7 @@ class MissingProvider:
             status="missing",
             confidence=0.9,
             evidence_ids=[],
+            partial_evidence_ids=[],
             related_evidence_ids=[],
             contradictory_evidence_ids=[],
             matched_terms=[],

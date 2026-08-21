@@ -20,14 +20,17 @@ class RequirementMatch(BaseModel):
     confidence: float = Field(ge=0, le=1)
     matched_terms: list[str]
     evidence: list[Evidence]
+    partial_evidence: list[Evidence] = Field(default_factory=list)
     related_evidence: list[Evidence] = Field(default_factory=list)
     contradictory_evidence: list[Evidence] = Field(default_factory=list)
     recommendation: str
 
     @model_validator(mode="after")
     def missing_requirements_cannot_have_supporting_evidence(self):
-        if self.status == "missing" and self.evidence:
-            raise ValueError("Missing requirements cannot cite supporting resume evidence")
+        if self.status == "missing" and (self.evidence or self.partial_evidence):
+            raise ValueError(
+                "Missing requirements cannot cite supporting or partial resume evidence"
+            )
         return self
 
 

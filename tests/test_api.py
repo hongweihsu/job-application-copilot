@@ -57,6 +57,7 @@ def test_llm_api_uses_configured_retriever(monkeypatch):
                 status="missing",
                 confidence=0.9,
                 evidence_ids=[],
+                partial_evidence_ids=[],
                 related_evidence_ids=[],
                 contradictory_evidence_ids=[],
                 matched_terms=[],
