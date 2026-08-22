@@ -1,6 +1,8 @@
 # Partial Evidence Targeted Error Analysis
 
-This analysis uses five targeted dev cases. Validation and test were not inspected.
+This analysis uses five targeted dev cases. Validation and test were not inspected. The first
+partial-evidence prompt scored 3/5; an activity-strength revision and a composite-requirement
+revision each scored 4/5.
 
 ## What improved
 
@@ -15,23 +17,28 @@ All three were classified `partial`, and the expected evidence was placed in
 
 ## Remaining failures
 
-Cloud migration was predicted `missing`. Coordination was treated as related and the sentence that
-denied architecture/implementation ownership was treated as contradictory. The expected label is
-partial because the candidate performed meaningful migration delivery work, although not the
-requested technical ownership.
+Cloud migration remained `missing` in both later revisions. Coordination was treated as related and
+the sentence that denied architecture/implementation ownership was treated as contradictory. The
+gold label is partial because the original annotation policy treats meaningful participation with
+insufficient scope as partial. However, a reasonable annotator could choose missing because none of
+the specifically requested technical architecture, implementation, or ownership is demonstrated.
 
-React Native was predicted `partial`. A hackathon evaluation with no shipped application was placed
-in `partial_evidence_ids`. The expected label is missing because evaluating a framework is not
-application-development experience.
+React Native was initially predicted `partial`. After adding the activity-strength rule, both later
+runs correctly predicted missing: native Android remained related and the unshipped hackathon
+evaluation did not become a citation.
 
 ## Decision
 
-The 3/5 smoke result does not qualify for a full dev rerun. The four-way relationship vocabulary is
-necessary but not sufficient. The next prompt/schema iteration needs an activity-strength rule:
+The 4/5 smoke result does not qualify for a full dev rerun under the pre-registered 5/5 gate. The
+activity-strength rule fixed React Native without regressing the three partial controls. A further
+composite-requirement prompt did not fix Cloud migration.
 
 - meaningful execution or delivery participation with limited ownership can be partial;
 - reviewing a real work product can be partial when it is part of delivery responsibility;
 - merely studying, observing, or evaluating a technology without performing the requested activity
   is related or contradictory, not partial.
 
-Do not inspect validation or weaken the safety control to improve the score.
+Stop prompt tuning at this point. Repeatedly adding instructions for one synthetic case would risk
+overfitting. Do not inspect validation, silently change the gold label, exclude the case after seeing
+the failure, or weaken the safety control. The Cloud migration case needs annotation adjudication or
+additional similar cases before another model change is justified.

@@ -125,6 +125,10 @@ def markdown_report(report: dict) -> str:
             "participation with limited ownership may be partial, while merely evaluating, "
             "observing, or studying a technology without doing the requested work is not.",
             "",
+            "Cloud migration remains an annotation-sensitive failure after two prompt revisions. "
+            "Further single-case prompt tuning is stopped to avoid overfitting; the case requires "
+            "adjudication or more examples with the same composite-requirement pattern.",
+            "",
         ]
     )
     return "\n".join(lines)

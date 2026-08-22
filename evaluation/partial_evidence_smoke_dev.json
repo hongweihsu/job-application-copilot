@@ -8,13 +8,13 @@
     "v2-dev-delivery-cloud-migration",
     "v2-dev-mobile-react-native"
   ],
-  "prompt_version": "requirement-match-v3-partial-evidence",
+  "prompt_version": "requirement-match-v5-composite-requirements",
   "top_k": 5,
   "candidate": {
     "metrics": {
       "classification": {
-        "accuracy": 0.6,
-        "macro_f1": 0.25,
+        "accuracy": 0.8,
+        "macro_f1": 0.5079365079365079,
         "false_supported_rate": 0.0,
         "per_class": {
           "supported": {
@@ -24,15 +24,15 @@
             "support": 0
           },
           "partial": {
-            "precision": 0.75,
+            "precision": 1.0,
             "recall": 0.75,
-            "f1": 0.75,
+            "f1": 0.8571428571428571,
             "support": 4
           },
           "missing": {
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1": 0.0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
             "support": 1
           }
         },
@@ -49,31 +49,31 @@
           },
           "missing": {
             "supported": 0,
-            "partial": 1,
-            "missing": 0
+            "partial": 0,
+            "missing": 1
           }
         }
       },
       "citations": {
-        "citation_precision": 0.75,
+        "citation_precision": 1.0,
         "citation_coverage": 0.75,
-        "total_citations": 4
+        "total_citations": 3
       },
       "safety": {
         "unsupported_claim_rate": 0.0,
         "violations": []
       },
       "latency_seconds": {
-        "mean": 15.45612951638177,
-        "p50": 14.675411708187312,
-        "p95": 19.59382399986498
+        "mean": 11.757762391585857,
+        "p50": 11.12328958301805,
+        "p95": 15.164931749925017
       }
     },
     "llm_usage": {
       "requests": 5,
-      "input_tokens": 3199,
-      "output_tokens": 5543,
-      "provider_elapsed_seconds": 72.65265508275479
+      "input_tokens": 4114,
+      "output_tokens": 5570,
+      "provider_elapsed_seconds": 57.455625873757526
     },
     "case_results": [
       {
@@ -86,7 +86,7 @@
         "cited_evidence_ids": [
           "resume-s6"
         ],
-        "generated_text": "To support this requirement, provide resume lines that explicitly state ownership/maintenance of production Terraform modules and responsibility for infrastructure delivery (for example: 'Owned and maintained production Terraform modules for X services, including module design, reviews, and publishing to a private registry' or 'Led infrastructure delivery using Terraform to provision and deploy production environments').",
+        "generated_text": "Ask the candidate to provide an example where they were the owner or primary author/maintainer of production Terraform modules and where they led or carried out infrastructure delivery (including scope and their specific responsibilities). If you will accept participation without ownership, clarify that reviewing PRs and designing IAM is sufficient.",
         "supporting_evidence_ids": [],
         "partial_evidence_ids": [
           "resume-s6"
@@ -109,7 +109,7 @@
         "cited_evidence_ids": [
           "resume-s4"
         ],
-        "generated_text": "Ask the candidate to provide explicit evidence of end-to-end ownership of a production iOS app written in Swift (e.g., project names, scope of ownership, responsibilities for releases/CI, production users, and duration). If no such experience exists, reframe the resume to avoid implying iOS ownership or highlight transferable responsibilities (release management, feature ownership) while being explicit about platform differences.",
+        "generated_text": "To meet this requirement, provide resume bullet(s) that explicitly state end-to-end ownership of an iOS app written in Swift \u2014 e.g., led development, architecture, releases to the App Store, production support, and scope (app name or users). If ownership was partial, clarify the responsibilities held (e.g., feature lead, release manager) and which production deliverables were under your control.",
         "supporting_evidence_ids": [],
         "partial_evidence_ids": [
           "resume-s4"
@@ -132,16 +132,16 @@
         "cited_evidence_ids": [
           "resume-s8"
         ],
-        "generated_text": "If the candidate has the requested experience, update the resume to state it explicitly and with brief specifics. For example: 'Independently deployed and managed services on Kubernetes (EKS/GKE/AKS) using Helm and kubectl; owned cluster upgrades, scaling, and incident remediation' or 'Owned CI/CD to deploy to Kubernetes and managed cluster operations (node management, monitoring, rollback).' Avoid implying independence if deployments were performed by a platform team.",
+        "generated_text": "To meet this requirement, the resume should state explicit independent Kubernetes responsibilities. For example, include specific ownership details if applicable: provisioning/operating clusters (EKS/GKE/AKS), managing node pools, performing upgrades, creating Helm charts/Kustomize manifests, running kubectl/helm deployments, configuring cluster monitoring/alerts, or owning CI/CD for Kubernetes deployments. If the candidate only used Kubernetes with platform-team support, clarify the scope (e.g., ran workloads and collaborated with platform team) rather than implying independent cluster operations.",
         "supporting_evidence_ids": [],
         "partial_evidence_ids": [
           "resume-s8"
         ],
         "related_evidence_ids": [
           "resume-s3",
-          "resume-s12",
+          "resume-s4",
           "resume-s11",
-          "resume-s4"
+          "resume-s12"
         ],
         "contradictory_evidence_ids": []
       },
@@ -153,7 +153,7 @@
           "resume-s4"
         ],
         "cited_evidence_ids": [],
-        "generated_text": "If you did have technical ownership, revise the resume to state that explicitly and include concrete, verifiable details: e.g., \u2018Owned architecture and implementation of cloud migration to [cloud provider], responsible for design decisions, migration plan, and execution,\u2019 plus scope (systems/users), duration, and measurable outcomes. If you did not own those responsibilities, avoid claiming technical ownership and instead continue to highlight coordination and stakeholder/PM leadership roles as shown.",
+        "generated_text": "If the candidate did have technical ownership, update the resume to state it explicitly (for example: 'owned/design/led architecture and implementation for cloud migration'), and include concrete scope, responsibilities, and technologies used. If not, avoid implying technical ownership and instead emphasize program/coordination strengths as currently described.",
         "supporting_evidence_ids": [],
         "partial_evidence_ids": [],
         "related_evidence_ids": [
@@ -169,23 +169,21 @@
       {
         "case_id": "v2-dev-mobile-react-native",
         "expected_status": "missing",
-        "predicted_status": "partial",
+        "predicted_status": "missing",
         "expected_evidence_ids": [],
-        "cited_evidence_ids": [
-          "resume-s5"
-        ],
-        "generated_text": "Request evidence of React Native used in a production app (e.g., shipped app, release notes, or role description noting React Native development), or relax the requirement to accept native Android mobile development if appropriate.",
+        "cited_evidence_ids": [],
+        "generated_text": "Ask the candidate to provide specific evidence of React Native work that was released to customers (app name, store links, release notes, PRs, or statements like 'built and shipped React Native app X to production'). If none exists, consider whether native Android production experience is an acceptable substitute and update the requirement accordingly.",
         "supporting_evidence_ids": [],
-        "partial_evidence_ids": [
-          "resume-s5"
-        ],
+        "partial_evidence_ids": [],
         "related_evidence_ids": [
-          "resume-s1",
           "resume-s2",
+          "resume-s1",
           "resume-s12",
           "resume-s11"
         ],
-        "contradictory_evidence_ids": []
+        "contradictory_evidence_ids": [
+          "resume-s5"
+        ]
       }
     ]
   },
@@ -195,10 +193,10 @@
     "input_tokens": 642
   },
   "decision": {
-    "correct_cases": 3,
+    "correct_cases": 4,
     "total_cases": 5,
     "partial_relationship_correct": false,
-    "missing_control_correct": false,
+    "missing_control_correct": true,
     "status": "needs_error_analysis"
   }
 }

@@ -58,7 +58,7 @@ def test_llm_analysis_returns_versioned_structured_result():
     )
     assert result.analyzer == "llm"
     assert result.model == "fake-model-v1"
-    assert result.prompt_version == "requirement-match-v3-partial-evidence"
+    assert result.prompt_version == "requirement-match-v5-composite-requirements"
     assert result.matches[0].evidence[0].text.startswith("Led four engineers")
 
 
@@ -162,6 +162,24 @@ def test_prompt_treats_named_technology_as_a_material_constraint():
     normalized_prompt = " ".join(SYSTEM_PROMPT.split())
     assert "named language, framework, platform" in normalized_prompt
     assert "native Android instead of React Native" in normalized_prompt
+
+
+def test_prompt_distinguishes_delivery_participation_from_exposure():
+    from app.llm.prompt import SYSTEM_PROMPT
+
+    normalized_prompt = " ".join(SYSTEM_PROMPT.split())
+    assert "Concrete delivery participation" in normalized_prompt
+    assert "technical ownership belonged to someone else" in normalized_prompt
+    assert "Merely studying, observing, discussing, or evaluating" in normalized_prompt
+
+
+def test_prompt_handles_composite_requirements_without_inventing_ownership():
+    from app.llm.prompt import SYSTEM_PROMPT
+
+    normalized_prompt = " ".join(SYSTEM_PROMPT.split())
+    assert "composite requirement" in normalized_prompt
+    assert "concrete delivery responsibility in that exact initiative" in normalized_prompt
+    assert "does not support the missing ownership" in normalized_prompt
 
 
 def test_llm_analysis_preserves_partial_evidence_with_material_limitation():
